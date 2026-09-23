@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="scroll-smooth">
 <head>
-    <meta name="google-site-verification" content="o1uahvAr0ktk7GWrf08JwbgU6KcC9Y-KADtLv_-ddn0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wearu.studio - Thời Trang Áo Thiết Kế Cao Cấp</title>
+    <title>Wearu.studio - Thời Trang & Tự Thiết Kế Cao Cấp</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts Expanded -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@700&family=Dancing+Script:wght@700&family=Great+Vibes&family=Montserrat:wght@800;900&family=Oswald:wght@600;700&family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Press+Start+2P&family=Righteous&family=Satisfy&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -18,635 +19,1397 @@
                 extend: {
                     colors: {
                         brand: {
-                            gold: '#D4AF37',
-                            dark: '#1A1A1A',
-                            cream: '#FBF9F5',
-                            accent: '#C5A059'
+                            dark: '#0f0f11',
+                            card: '#18181c',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                            nude: '#f4efa8',
+                            cream: '#f9f8f3',
+                            gray: '#8e8e93',
+                            accent: '#c5a059'
                         }
                     },
                     fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        script: ['"Dancing Script"', 'cursive'],
-                        boldstyle: ['"Montserrat"', 'sans-serif'],
-                        bebas: ['"Bebas Neue"', 'sans-serif'],
-                        oswald: ['"Oswald"', 'sans-serif'],
-                        righteous: ['"Righteous"', 'cursive'],
-                        cinzel: ['"Cinzel"', 'serif'],
-                        greatvibes: ['"Great Vibes"', 'cursive'],
-                        pacifico: ['"Pacifico"', 'cursive'],
-                        satisfy: ['"Satisfy"', 'cursive'],
-                        gothic: ['"UnifrakturMaguntia"', 'cursive'],
-                        pixel: ['"Press Start 2P"', 'cursive']
+                        serif: ['"Playfair Display"', 'serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
-        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); }
-        
-        /* Font Classes */
-        .f-sans { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
-        .f-serif { font-family: 'Playfair Display', serif; font-weight: 700; }
-        .f-bebas { font-family: 'Bebas Neue', cursive; letter-spacing: 2px; }
-        .f-montserrat { font-family: 'Montserrat', sans-serif; font-weight: 900; }
-        .f-oswald { font-family: 'Oswald', sans-serif; font-weight: 700; }
-        .f-righteous { font-family: 'Righteous', cursive; }
-        .f-cinzel { font-family: 'Cinzel', serif; font-weight: 700; }
-        .f-dancing { font-family: 'Dancing Script', cursive; font-weight: 700; }
-        .f-greatvibes { font-family: 'Great Vibes', cursive; }
-        .f-pacifico { font-family: 'Pacifico', cursive; }
-        .f-satisfy { font-family: 'Satisfy', cursive; }
-        .f-gothic { font-family: 'UnifrakturMaguntia', cursive; }
-        .f-pixel { font-family: 'Press Start 2P', cursive; font-size: 0.8em; }
-
-        /* Smooth Part Transition */
-        .shirt-part { transition: fill 0.25s ease-in-out; cursor: pointer; }
-        .shirt-part:hover { opacity: 0.9; }
+        /* Custom scrollbar and animations */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f0f11;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a30;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+        }
+        .gold-border {
+            border-image: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37) 1;
+        }
+        .canvas-container {
+            user-select: none;
+        }
+        .page-view {
+            display: none;
+        }
+        .page-view.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
-<body class="bg-brand-cream text-gray-800 antialiased selection:bg-brand-gold selection:text-white">
+<body class="bg-[#0f0f11] text-gray-200 font-sans min-h-screen flex flex-col justify-between selection:bg-brand-gold selection:text-black">
 
-    <!-- Header / Navigation -->
-    <header class="fixed w-full top-0 z-50 glass border-b border-gray-100 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="text-2xl sm:text-3xl font-serif font-bold tracking-widest text-brand-dark">
-                WEARU <span class="text-xs font-sans tracking-widest font-light block text-brand-gold">.STUDIO</span>
-            </a>
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-amber-900 via-yellow-700 to-amber-900 text-amber-100 text-xs py-2 px-4 text-center font-medium tracking-wider uppercase flex justify-between items-center z-50 relative">
+        <span class="hidden sm:inline">✨ Miễn phí vận chuyển cho đơn hàng từ 1.000.000đ</span>
+        <span class="mx-auto sm:mx-0">🔥 Bộ Sưu Tập Mùa Thu 2026 Đã Ra Mắt - Giảm 15% Khi Tự Thiết Kế</span>
+        <span class="hidden md:inline"><i class="fa-solid font-bold fa-phone mr-1"></i> Hotline: 1900 8888</span>
+    </div>
 
-            <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-widest uppercase">
-                <a href="#about" class="hover:text-brand-gold transition-colors">Về Thương Hiệu</a>
-                <a href="#custom-studio" class="hover:text-brand-gold transition-colors">Tự Thiết Kế Áo</a>
-                <a href="#collections" class="hover:text-brand-gold transition-colors">Bộ Sưu Tập Áo</a>
-                <a href="#contact" class="hover:text-brand-gold transition-colors">Liên Hệ</a>
-            </nav>
-
-            <div class="flex items-center space-x-5">
-                <button onclick="toggleCart()" class="relative p-2 text-gray-700 hover:text-brand-gold transition-colors">
-                    <i class="fa-solid fa-bag-shopping text-xl"></i>
-                    <span id="cart-count" class="absolute -top-1 -right-1 bg-brand-gold text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center pt-20 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=2070&auto=format&fit=crop');">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white py-24">
-            <span class="text-brand-gold tracking-[0.3em] uppercase text-sm font-semibold block mb-3">Thủ Công & Độc Bản</span>
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal leading-tight mb-6">
-                Định Hình Style <br><span class="italic font-light">Bản Cụm Riêng Bạn</span>
-            </h1>
-            <p class="max-w-xl text-gray-200 text-lg mb-8 font-light">
-                Mỗi trang phục từ Wearu.studio đều là một tác phẩm nghệ thuật thủ công, tôn vinh khí chất và cá tính riêng biệt của bạn.
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <a href="#collections" class="bg-brand-gold hover:bg-brand-accent text-white px-8 py-4 uppercase text-xs tracking-widest font-semibold transition-all shadow-lg hover:shadow-xl">
-                    Khám Phá BST
-                </a>
-                <a href="#custom-studio" class="border border-white hover:bg-white hover:text-brand-dark text-white px-8 py-4 uppercase text-xs tracking-widest font-semibold transition-all">
-                    Đặt Thiết Kế Riêng
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Brand Intro -->
-    <section id="about" class="py-16 bg-white">
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-[#0f0f11]/90 backdrop-blur-md border-b border-white/10 transition-all duration-300" id="mainHeader">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1000&auto=format&fit=crop" alt="Áo thun thiết kế" class="w-full h-[450px] object-cover shadow-xl rounded-sm">
-                    <div class="absolute -bottom-6 -right-6 bg-brand-cream p-6 hidden sm:block border border-gray-200 shadow-md">
-                        <p class="font-serif text-3xl font-bold text-brand-gold">100%</p>
-                        <p class="text-xs uppercase tracking-widest text-gray-600">Cotton & Chất Liệu Premium</p>
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center bg-black group-hover:scale-105 transition-transform duration-300">
+                        <span class="font-serif font-bold text-xl text-brand-gold">W</span>
                     </div>
-                </div>
-                <div>
-                    <span class="text-brand-gold tracking-widest uppercase text-xs font-bold">Thời Trang Đô Thị</span>
-                    <h2 class="text-3xl sm:text-4xl font-serif mt-2 mb-6 text-brand-dark">Phong Cách Hiện Đại, Chất Lượng Vượt Trội</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        Wearu.studio chuyên cung cấp dòng sản phẩm áo thiết kế bao gồm Áo thun, Hoodie, Áo khoác dù chống nước, Áo tay dài và Áo thể thao với phom dáng streetwear hiện đại.
-                    </p>
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        Tất cả mẫu áo đều được chú trọng từ đường may, chất liệu vải thoáng mát cho đến công nghệ in thêu sắc nét, độ bền màu cao.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive T-Shirt Customizer Studio -->
-    <section id="custom-studio" class="py-16 bg-brand-cream border-t border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-10">
-                <span class="text-brand-gold tracking-widest uppercase text-xs font-bold">Dịch Vụ Cá Nhân Hóa</span>
-                <h2 class="text-3xl sm:text-4xl font-serif mt-1 text-brand-dark">Studio Tự Thiết Kế Áo</h2>
-                <p class="text-gray-500 text-sm mt-2">Phối màu riêng cho thân, tay áo & cổ áo. Thêm chữ, tải logo và xem trước tức thì.</p>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
-                
-                <!-- Left: Shirt Live Canvas Preview (7 cols) -->
-                <div class="lg:col-span-7 bg-gray-100 p-6 sm:p-10 flex flex-col items-center justify-center relative min-h-[480px]">
-                    <div class="absolute top-4 left-4 bg-white/80 backdrop-blur px-3 py-1.5 rounded text-xs font-semibold text-gray-600 shadow-sm">
-                        <i class="fa-solid fa-eye mr-1 text-brand-gold"></i> Xem Trước Trực Tiếp
+                    <div class="flex flex-col">
+                        <span class="font-serif font-bold text-2xl tracking-widest text-white group-hover:text-brand-gold transition-colors">WEARU<span class="text-brand-gold">.</span></span>
+                        <span class="text-[9px] tracking-[0.3em] text-gray-400 uppercase">Studio Clothing</span>
                     </div>
+                </a>
 
-                    <!-- T-Shirt Container -->
-                    <div id="tshirt-container" class="relative w-[320px] h-[380px] sm:w-[380px] sm:h-[440px] flex items-center justify-center transition-all duration-300">
-                        <svg id="tshirt-svg" viewBox="0 0 500 500" class="w-full h-full drop-shadow-xl">
-                            <!-- Tay Trái -->
-                            <path id="part-left-sleeve" class="shirt-part" fill="#FFFFFF" stroke="#333333" stroke-width="5" stroke-linejoin="round" d="M 150 50 L 50 120 L 100 200 L 130 170 Z" onclick="selectPart('sleeves')"/>
-                            <!-- Tay Phải -->
-                            <path id="part-right-sleeve" class="shirt-part" fill="#FFFFFF" stroke="#333333" stroke-width="5" stroke-linejoin="round" d="M 350 50 L 450 120 L 400 200 L 370 170 Z" onclick="selectPart('sleeves')"/>
-                            <!-- Thân Áo -->
-                            <path id="part-body" class="shirt-part" fill="#FFFFFF" stroke="#333333" stroke-width="5" stroke-linejoin="round" d="M 150 50 L 200 80 Q 250 100 300 80 L 350 50 L 370 170 L 370 450 L 130 450 L 130 170 Z" onclick="selectPart('body')"/>
-                            <!-- Cổ Áo -->
-                            <path id="part-collar" class="shirt-part" fill="#FFFFFF" stroke="#333333" stroke-width="5" stroke-linejoin="round" d="M 200 80 Q 250 120 300 80 Q 250 100 200 80 Z" onclick="selectPart('collar')"/>
-                        </svg>
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative" data-route="home">
+                        Trang Chủ
+                    </a>
+                    <a href="#about" class="nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-gray-300 hover:text-brand-gold" data-route="about">
+                        Về Thương Hiệu
+                    </a>
+                    <a href="#customizer" class="nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-gray-300 hover:text-brand-gold flex items-center gap-1.5" data-route="customizer">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-gold"></span>
+                        </span>
+                        Tự Thiết Kế Áo
+                    </a>
+                    <a href="#collection" class="nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-gray-300 hover:text-brand-gold" data-route="collection">
+                        Bộ Sưu Tập Áo
+                    </a>
+                    <a href="#contact" class="nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-gray-300 hover:text-brand-gold" data-route="contact">
+                        Liên Hệ
+                    </a>
+                </nav>
 
-                        <!-- Printable Area Overlay -->
-                        <div class="absolute w-[180px] h-[240px] border border-dashed border-gray-400/50 rounded flex flex-col items-center justify-center p-2 text-center overflow-hidden top-[120px]">
-                            <!-- Custom Text Element -->
-                            <div id="canvas-text" class="cursor-move select-none transition-all duration-150 absolute f-bebas text-gray-900" style="top: 30%; left: 50%; transform: translate(-50%, -50%); font-size: 26px; text-shadow: 0 1px 2px rgba(0,0,0,0.1);">
-                                WEARU STUDIO
+                <!-- Actions: Cart, Notifications, Mobile Menu Toggle -->
+                <div class="flex items-center space-x-5">
+                    <!-- Notifications Dropdown Trigger -->
+                    <div class="relative">
+                        <button id="notifBtn" onclick="toggleNotifications()" class="p-2 text-gray-300 hover:text-brand-gold transition-colors relative" title="Thông báo">
+                            <i class="fa-regular fa-bell text-xl"></i>
+                            <span class="absolute top-1 right-1 w-2 h-2 bg-brand-gold rounded-full"></span>
+                        </button>
+                        <!-- Notifications Popup -->
+                        <div id="notifMenu" class="hidden absolute right-0 mt-3 w-80 bg-brand-card border border-white/10 rounded-xl shadow-2xl p-4 z-50">
+                            <h4 class="font-bold text-sm border-b border-white/10 pb-2 mb-3 text-brand-gold">Thông Báo Mới</h4>
+                            <div class="space-y-3 text-xs">
+                                <div class="p-2 rounded bg-white/5 hover:bg-white/10 transition-colors cursor-pointer">
+                                    <p class="font-semibold text-white">🎉 Khuyến mãi mùa Thu 2026</p>
+                                    <p class="text-gray-400 mt-0.5">Nhập mã <span class="text-brand-gold font-mono">WEARU2026</span> giảm 10% đơn đầu tiên.</p>
+                                </div>
+                                <div class="p-2 rounded bg-white/5 hover:bg-white/10 transition-colors cursor-pointer">
+                                    <p class="font-semibold text-white">👕 Bộ sưu tập Polo mới</p>
+                                    <p class="text-gray-400 mt-0.5">Dòng sản phẩm vải Bamboo cao cấp vừa cập bến.</p>
+                                </div>
                             </div>
-
-                            <!-- Custom Uploaded Image Element -->
-                            <img id="canvas-img" src="" class="hidden max-w-[140px] max-h-[140px] object-contain absolute" style="top: 65%; left: 50%; transform: translate(-50%, -50%);" alt="Uploaded Logo">
                         </div>
                     </div>
 
-                    <p class="text-[11px] text-gray-400 mt-4"><i class="fa-solid fa-hand-pointer mr-1"></i> Bấm trực tiếp vào từng bộ phận trên áo hoặc dùng bảng chọn bên phải để phối màu</p>
+                    <!-- Cart Trigger -->
+                    <button onclick="openCartDrawer()" class="p-2 text-gray-300 hover:text-brand-gold transition-colors relative flex items-center gap-2 group">
+                        <div class="relative">
+                            <i class="fa-solid fa-bag-shopping text-xl"></i>
+                            <span id="cartBadge" class="absolute -top-2 -right-2 bg-brand-gold text-black font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                        </div>
+                        <span class="hidden sm:inline text-xs font-semibold uppercase group-hover:text-brand-gold">Giỏ hàng</span>
+                    </button>
+
+                    <!-- Mobile Hamburger Toggle -->
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-brand-card border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-gray-300 hover:text-brand-gold border-b border-white/5">TRANG CHỦ</a>
+            <a href="#about" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-gray-300 hover:text-brand-gold border-b border-white/5">VỀ THƯƠNG HIỆU</a>
+            <a href="#customizer" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-brand-gold font-bold border-b border-white/5">✨ TỰ THIẾT KẾ ÁO</a>
+            <a href="#collection" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-gray-300 hover:text-brand-gold border-b border-white/5">BỘ SƯU TẬP ÁO</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-gray-300 hover:text-brand-gold">LIÊN HỆ</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT VIEWS CONTAINER -->
+    <main class="flex-grow">
+        
+        <!-- 1. TRANG CHỦ (#home) -->
+        <section id="view-home" class="page-view">
+            <!-- Hero Banner -->
+            <div class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-black/60">
+                <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0f0f11] via-[#0f0f11]/60 to-transparent"></div>
+                
+                <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+                    <span class="inline-block px-4 py-1.5 bg-brand-gold/20 border border-brand-gold/40 rounded-full text-brand-gold text-xs tracking-widest uppercase mb-6 font-semibold">
+                        Luxury Studio Custom Apparel
+                    </span>
+                    <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight leading-tight mb-6">
+                        Định Hình Phong Cách <br/><span class="gold-gradient-text">Tự Do Sáng Tạo</span>
+                    </h1>
+                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                        Khám phá bộ sưu tập thời trang tối giản cao cấp hoặc tự tay kiến tạo chiếc áo độc bản mang đậm dấu ấn cá nhân của riêng bạn tại Wearu Studio.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#customizer" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-gold to-yellow-600 text-black font-bold uppercase tracking-wider text-sm rounded-full hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Trải Nghiệm Thiết Kế 3D
+                        </a>
+                        <a href="#collection" class="w-full sm:w-auto px-8 py-4 border border-white/20 hover:border-brand-gold text-white hover:text-brand-gold font-semibold uppercase tracking-wider text-sm rounded-full transition-all duration-300 bg-white/5 backdrop-blur-sm">
+                            Xem Bộ Sưu Tập
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-white">Danh Mục Nổi Bật</h2>
+                    <div class="w-16 h-1 bg-brand-gold mx-auto mt-4 rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="group relative rounded-2xl overflow-hidden bg-brand-card border border-white/10 h-96 cursor-pointer" onclick="navigateTo('collection', 'tshirt')">
+                        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80" alt="T-Shirt" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Premium Cotton</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">Áo Phông / T-Shirt</h3>
+                            <p class="text-gray-400 text-sm mt-2">Form dáng Oversized hiện đại, chất vải 100% Cotton 250GSM.</p>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-2xl overflow-hidden bg-brand-card border border-white/10 h-96 cursor-pointer" onclick="navigateTo('collection', 'hoodie')">
+                        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80" alt="Hoodie" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Streetwear Essential</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">Hoodie & Sweatshirt</h3>
+                            <p class="text-gray-400 text-sm mt-2">Đứng form, nỉ chân cua dày dặn giữ ấm chuẩn phong cách.</p>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-2xl overflow-hidden bg-brand-card border border-white/10 h-96 cursor-pointer" onclick="navigateTo('collection', 'polo')">
+                        <img src="https://images.unsplash.com/photo-1625910513413-730303e913a8?auto=format&fit=crop&w=800&q=80" alt="Polo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Smart Casual</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">Áo Polo Cao Cấp</h3>
+                            <p class="text-gray-400 text-sm mt-2">Sợi tre Bamboo thoáng mát, tinh tế lịch sự trong từng chi tiết.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Sellers Preview -->
+            <div class="bg-brand-card/50 py-20 border-y border-white/5">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                        <div>
+                            <span class="text-brand-gold text-xs tracking-widest uppercase font-semibold">Sản Phẩm Được Yêu Thích</span>
+                            <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mt-1">Best Sellers Studio</h2>
+                        </div>
+                        <a href="#collection" class="inline-flex items-center gap-2 text-brand-gold hover:text-white transition-colors text-sm font-semibold uppercase tracking-wider mt-4 md:mt-0">
+                            Xem tất cả sản phẩm <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="homeBestSellers">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Commitments -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                    <div class="p-6 rounded-2xl bg-brand-card border border-white/5">
+                        <div class="w-14 h-14 bg-brand-gold/10 text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-2">Vải Cotton 100% Premium</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">Chất liệu hữu cơ thoáng mát, co giãn tốt và thân thiện với làn da.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-brand-card border border-white/5">
+                        <div class="w-14 h-14 bg-brand-gold/10 text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                            <i class="fa-solid fa-print"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-2">Công Nghệ In DTG Nhật Bản</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">Màu in sắc nét, bền đẹp qua hàng trăm lần giặt, không bong tróc.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-brand-card border border-white/5">
+                        <div class="w-14 h-14 bg-brand-gold/10 text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-2">Giao Hàng Tốc Độ</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">In và hoàn thiện áo tự thiết kế trong 24h - 48h làm việc.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-brand-card border border-white/5">
+                        <div class="w-14 h-14 bg-brand-gold/10 text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-2">Đổi Trả Trong 15 Ngày</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">Hỗ trợ đổi size hoặc lỗi từ nhà sản xuất cực kỳ đơn giản.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. TRANG VỀ THƯƠNG HIỆU (#about) -->
+        <section id="view-about" class="page-view">
+            <!-- Header -->
+            <div class="bg-brand-card py-16 border-b border-white/10">
+                <div class="max-w-4xl mx-auto text-center px-4">
+                    <span class="text-brand-gold text-xs uppercase tracking-[0.3em] font-semibold">Story of Wearu Studio</span>
+                    <h1 class="font-serif text-4xl sm:text-5xl font-bold text-white mt-2">Hành Trình Kiến Tạo Bản Sắc</h1>
+                    <p class="text-gray-400 text-sm sm:text-base mt-4 max-w-2xl mx-auto">
+                        Chúng tôi tin rằng thời trang không chỉ là trang phục bạn mặc lên người, mà là cách bạn đối thoại với thế giới xung quanh mà không cần cất lời.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Brand Content -->
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+                <!-- Section 1: Triết lý -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-brand-gold text-xs font-semibold uppercase tracking-widest">Triết Lý Thiết Kế</span>
+                        <h2 class="font-serif text-3xl font-bold text-white mt-2 mb-6">Tối Giản Trong Hình Thức - Tối Đa Trong Bản Sắc</h2>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            Được thành lập vào năm 2024 tại TP. Hồ Chí Minh, **Wearu.studio** ra đời với sứ mệnh xóa bỏ rào cản giữa ý tưởng sáng tạo cá nhân và sản phẩm thời trang hoàn thiện thực tế.
+                        </p>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Mỗi sản phẩm Wearu tạo ra đều bắt đầu từ chất liệu vải chọn lọc khắt khe, đường kim mũi chỉ chuẩn mực và công nghệ in hiện đại nhất, cho phép bạn biến những dòng chữ, nét vẽ hay ý niệm cá nhân thành hiện thực.
+                        </p>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80" alt="Studio Wearu" class="w-full h-[400px] object-cover">
+                    </div>
                 </div>
 
-                <!-- Right: Customizer Control Panel (5 cols) -->
-                <div class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-white">
+                <!-- Section 2: Quy trình bền vững -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1 relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80" alt="Sản xuất bền vững" class="w-full h-[400px] object-cover">
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <span class="text-brand-gold text-xs font-semibold uppercase tracking-widest">Cam Kết Bền Vùng</span>
+                        <h2 class="font-serif text-3xl font-bold text-white mt-2 mb-6">In Theo Yêu Cầu - Giảm Mức Thải Nhựa & Vải Thừa</h2>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            Ngành thời trang nhanh tạo ra lượng rác thải khổng lồ mỗi năm. Tại Wearu.studio, chúng tôi tiên phong áp dụng mô hình **On-Demand Production (Sản xuất theo đơn)**.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gray-400">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-brand-gold"></i>
+                                100% Mực in gốc nước sinh học an toàn cho da & môi trường.
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-brand-gold"></i>
+                                Vải Cotton organic đạt chứng nhận GOTS.
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-brand-gold"></i>
+                                Bao bì tái chế không sử dụng nilon khó phân hủy.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Founder / Team Section -->
+                <div class="bg-brand-card p-10 rounded-3xl border border-white/10 text-center">
+                    <h2 class="font-serif text-3xl font-bold text-white mb-2">Đội Ngũ Sáng Tạo</h2>
+                    <p class="text-gray-400 text-sm max-w-xl mx-auto mb-10">Những con người nhiệt huyết đứng sau từng đường may và trải nghiệm của bạn.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                        <div class="p-4">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-brand-gold">
+                            <h4 class="font-bold text-white">Minh Anh</h4>
+                            <p class="text-xs text-brand-gold">Creative Director</p>
+                        </div>
+                        <div class="p-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-brand-gold">
+                            <h4 class="font-bold text-white">Hoàng Nam</h4>
+                            <p class="text-xs text-brand-gold">Lead Designer & Tailor</p>
+                        </div>
+                        <div class="p-4">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-brand-gold">
+                            <h4 class="font-bold text-white">Linh Trần</h4>
+                            <p class="text-xs text-brand-gold">Product Experience Lead</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TRANG TỰ THIẾT KẾ ÁO (#customizer) -->
+        <section id="view-customizer" class="page-view">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <!-- Title Header -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-4 border-b border-white/10">
+                    <div>
+                        <h1 class="font-serif text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+                            <i class="fa-solid fa-palette text-brand-gold"></i> Wearu Custom Studio 3D
+                        </h1>
+                        <p class="text-xs md:text-sm text-gray-400 mt-1">Tự tay thiết kế chiếc áo độc bản. Xem trước góc nhìn thực tế.</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 flex items-center gap-3">
+                        <button onclick="resetCustomizer()" class="px-4 py-2 text-xs bg-white/5 hover:bg-white/10 text-gray-300 rounded-lg transition-colors flex items-center gap-1.5">
+                            <i class="fa-solid fa-rotate-right"></i> Làm Mới
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Customizer Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     
-                    <div class="space-y-5">
-                        <!-- 1. TỰ PHỐI MÀU ÁO -->
-                        <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <label class="block text-xs uppercase font-bold tracking-wider text-gray-700">1. Tự Phối Màu Áo</label>
-                                <button onclick="setAllColor('#FFFFFF')" class="text-[11px] text-brand-gold font-semibold underline hover:text-brand-dark">Đồng bộ màu trắng</button>
+                    <!-- Left: Preview Canvas Area (7 cols) -->
+                    <div class="lg:col-span-7 bg-brand-card border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-between min-h-[500px] relative overflow-hidden">
+                        
+                        <!-- Toggle View Side (Front/Back) -->
+                        <div class="absolute top-4 left-4 z-20 flex bg-black/60 backdrop-blur-md p-1 rounded-xl border border-white/10">
+                            <button id="viewFrontBtn" onclick="switchShirtView('front')" class="px-4 py-1.5 text-xs font-semibold rounded-lg bg-brand-gold text-black transition-all">
+                                Mặt Trước
+                            </button>
+                            <button id="viewBackBtn" onclick="switchShirtView('back')" class="px-4 py-1.5 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all">
+                                Mặt Sau
+                            </button>
+                        </div>
+
+                        <!-- Canvas Workspace Container -->
+                        <div class="relative w-full max-w-[380px] aspect-[4/5] my-auto flex items-center justify-center border border-dashed border-white/10 rounded-xl bg-black/20 p-2">
+                            <!-- SVG Shirt Base Layer -->
+                            <svg id="shirtSvg" class="w-full h-full drop-shadow-2xl transition-all duration-300" viewBox="0 0 500 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Shirt Outline Path -->
+                                <path id="shirtBody" d="M160 80 C 190 110, 310 110, 340 80 L 440 140 L 390 230 L 350 190 L 350 510 C 350 520, 340 530, 330 530 L 170 530 C 160 530, 150 520, 150 510 L 150 190 L 110 230 L 60 140 Z" fill="#ffffff" stroke="#222" stroke-width="2"/>
+                                <!-- Collar -->
+                                <path d="M160 80 C 200 120, 300 120, 340 80 C 310 100, 190 100, 160 80 Z" fill="#111" opacity="0.15"/>
+                                <!-- Sleeve Lines -->
+                                <line x1="110" y1="230" x2="150" y2="190" stroke="#000" stroke-opacity="0.2" stroke-width="2"/>
+                                <line x1="390" y1="230" x2="350" y2="190" stroke="#000" stroke-opacity="0.2" stroke-width="2"/>
+                            </svg>
+
+                            <!-- Printable Area Guide Box -->
+                            <div class="absolute w-44 h-56 border border-dashed border-brand-gold/40 rounded flex items-center justify-center pointer-events-none">
+                                <span class="text-[9px] text-brand-gold/40 uppercase tracking-widest pointer-events-none">Vùng In Chính</span>
                             </div>
 
-                            <!-- Tabs Chọn Bộ Phận -->
-                            <div class="flex border-b border-gray-200 mb-3 text-xs">
-                                <button id="tab-body" onclick="setActivePartTab('body')" class="part-tab py-2 px-3 border-b-2 border-brand-gold font-bold text-brand-dark">Thân Áo</button>
-                                <button id="tab-sleeves" onclick="setActivePartTab('sleeves')" class="part-tab py-2 px-3 border-b-2 border-transparent text-gray-500 hover:text-brand-dark">Cánh Tay</button>
-                                <button id="tab-collar" onclick="setActivePartTab('collar')" class="part-tab py-2 px-3 border-b-2 border-transparent text-gray-500 hover:text-brand-dark">Viền Cổ</button>
+                            <!-- Custom Text Layer (Front) -->
+                            <div id="frontTextLayer" class="absolute cursor-move select-none flex items-center justify-center p-2" style="top: 35%; left: 32%;">
+                                <span id="customTextDisplay" class="font-sans text-xl font-bold text-black transition-all"></span>
                             </div>
 
-                            <!-- Palette Chọn Màu -->
-                            <div class="flex items-center space-x-2.5 flex-wrap gap-y-2">
-                                <button onclick="applyPartColor('#FFFFFF')" class="w-7 h-7 rounded-full bg-white border-2 border-gray-300 shadow-sm focus:scale-110 transition-transform" title="Trắng"></button>
-                                <button onclick="applyPartColor('#1A1A1A')" class="w-7 h-7 rounded-full bg-gray-900 border-2 border-transparent hover:scale-110 transition-transform" title="Đen"></button>
-                                <button onclick="applyPartColor('#1E3A8A')" class="w-7 h-7 rounded-full bg-blue-900 border-2 border-transparent hover:scale-110 transition-transform" title="Xanh Navy"></button>
-                                <button onclick="applyPartColor('#991B1B')" class="w-7 h-7 rounded-full bg-red-800 border-2 border-transparent hover:scale-110 transition-transform" title="Đỏ Đô"></button>
-                                <button onclick="applyPartColor('#6B7280')" class="w-7 h-7 rounded-full bg-gray-500 border-2 border-transparent hover:scale-110 transition-transform" title="Xám"></button>
-                                <button onclick="applyPartColor('#065F46')" class="w-7 h-7 rounded-full bg-emerald-800 border-2 border-transparent hover:scale-110 transition-transform" title="Xanh Lục Bảo"></button>
-                                <button onclick="applyPartColor('#D4AF37')" class="w-7 h-7 rounded-full bg-yellow-500 border-2 border-transparent hover:scale-110 transition-transform" title="Vàng Gold"></button>
-                                <button onclick="applyPartColor('#F3E8FF')" class="w-7 h-7 rounded-full bg-purple-200 border-2 border-transparent hover:scale-110 transition-transform" title="Tím Pastel"></button>
-                                <label class="w-7 h-7 rounded-full border-2 border-dashed border-gray-400 flex items-center justify-center cursor-pointer hover:border-brand-gold overflow-hidden relative" title="Tùy chỉnh màu">
-                                    <i class="fa-solid fa-plus text-[10px] text-gray-500"></i>
-                                    <input type="color" onchange="applyPartColor(this.value)" class="absolute opacity-0 w-full h-full cursor-pointer">
+                            <!-- Custom Text Layer (Back) -->
+                            <div id="backTextLayer" class="absolute cursor-move select-none flex items-center justify-center p-2 hidden" style="top: 35%; left: 32%;">
+                                <span id="customBackTextDisplay" class="font-sans text-xl font-bold text-black transition-all">WEARU</span>
+                            </div>
+
+                            <!-- Custom Logo Image Layer -->
+                            <div id="customImageLayer" class="absolute cursor-move select-none hidden" style="top: 45%; left: 38%; width: 90px; height: 90px;">
+                                <img id="customImageDisplay" src="" class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <div class="text-center text-xs text-gray-500">
+                            💡 Gợi ý: Bạn có thể nhập chữ và tải logo riêng để thiết kế mẫu áo cá nhân hóa.
+                        </div>
+                    </div>
+
+                    <!-- Right: Customizer Control Panel (5 cols) -->
+                    <div class="lg:col-span-5 space-y-6">
+                        
+                        <!-- 1. Color Selector -->
+                        <div class="bg-brand-card border border-white/10 rounded-2xl p-5">
+                            <h3 class="text-sm font-bold text-white mb-3 uppercase tracking-wider flex items-center gap-2">
+                                <span class="w-2 h-2 bg-brand-gold rounded-full"></span> 1. Chọn Màu Áo
+                            </h3>
+                            <div class="flex items-center gap-3" id="colorPickerList">
+                                <button onclick="changeShirtColor('#ffffff')" class="w-9 h-9 rounded-full bg-white border-2 border-brand-gold shadow-md hover:scale-110 transition-transform" title="Trắng"></button>
+                                <button onclick="changeShirtColor('#18181b')" class="w-9 h-9 rounded-full bg-zinc-900 border-2 border-transparent hover:border-brand-gold shadow-md hover:scale-110 transition-transform" title="Đen"></button>
+                                <button onclick="changeShirtColor('#27272a')" class="w-9 h-9 rounded-full bg-zinc-800 border-2 border-transparent hover:border-brand-gold shadow-md hover:scale-110 transition-transform" title="Xám Đậm"></button>
+                                <button onclick="changeShirtColor('#1e3a8a')" class="w-9 h-9 rounded-full bg-blue-900 border-2 border-transparent hover:border-brand-gold shadow-md hover:scale-110 transition-transform" title="Xanh Navy"></button>
+                                <button onclick="changeShirtColor('#3f6212')" class="w-9 h-9 rounded-full bg-lime-900 border-2 border-transparent hover:border-brand-gold shadow-md hover:scale-110 transition-transform" title="Xanh Rêu"></button>
+                                <button onclick="changeShirtColor('#7f1d1d')" class="w-9 h-9 rounded-full bg-red-900 border-2 border-transparent hover:border-brand-gold shadow-md hover:scale-110 transition-transform" title="Đỏ Đô"></button>
+                            </div>
+                        </div>
+
+                        <!-- 2. Text Customizer -->
+                        <div class="bg-brand-card border border-white/10 rounded-2xl p-5 space-y-4">
+                            <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                                <span class="w-2 h-2 bg-brand-gold rounded-full"></span> 2. Thêm Chữ Custom
+                            </h3>
+                            <div>
+                                <label class="text-xs text-gray-400 block mb-1">Nội dung chữ:</label>
+                                <input type="text" id="customTextInput" oninput="updateCustomText()" placeholder="Nhập chữ bạn muốn in..." class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold">
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="text-xs text-gray-400 block mb-1">Phông chữ:</label>
+                                    <select id="fontSelect" onchange="updateCustomText()" class="w-full bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-gold">
+                                        <option value="Plus Jakarta Sans">Hiện Đại (Sans)</option>
+                                        <option value="Playfair Display">Cổ Điển (Serif)</option>
+                                        <option value="Courier New">Monospace (Gõ Máy)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="text-xs text-gray-400 block mb-1">Màu chữ:</label>
+                                    <input type="color" id="textColorInput" onchange="updateCustomText()" value="#000000" class="w-full h-9 rounded-xl bg-black/40 border border-white/10 cursor-pointer p-1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Upload Artwork / Logo -->
+                        <div class="bg-brand-card border border-white/10 rounded-2xl p-5">
+                            <h3 class="text-sm font-bold text-white mb-3 uppercase tracking-wider flex items-center gap-2">
+                                <span class="w-2 h-2 bg-brand-gold rounded-full"></span> 3. Tải Logo / Art In
+                            </h3>
+                            <label class="flex flex-col items-center justify-center border-2 border-dashed border-white/20 hover:border-brand-gold rounded-xl p-4 cursor-pointer transition-colors bg-black/20">
+                                <i class="fa-solid fa-cloud-arrow-up text-2xl text-brand-gold mb-1"></i>
+                                <span class="text-xs text-gray-300 font-medium">Tải hình ảnh từ máy tính</span>
+                                <span class="text-[10px] text-gray-500 mt-0.5">Định dạng PNG, JPG (Tối đa 5MB)</span>
+                                <input type="file" id="imageUploader" accept="image/*" onchange="handleImageUpload(event)" class="hidden">
+                            </label>
+                        </div>
+
+                        <!-- 4. Size & Add to Cart -->
+                        <div class="bg-brand-card border border-white/10 rounded-2xl p-5 space-y-4">
+                            <div>
+                                <label class="text-xs text-gray-400 block mb-2 font-bold uppercase tracking-wider">Kích Thước (Size):</label>
+                                <div class="grid grid-cols-5 gap-2" id="customSizePicker">
+                                    <button onclick="selectCustomSize('S')" class="size-btn py-2 text-xs font-bold border border-white/20 rounded-xl text-gray-300 hover:border-brand-gold">S</button>
+                                    <button onclick="selectCustomSize('M')" class="size-btn py-2 text-xs font-bold border border-brand-gold bg-brand-gold/10 text-brand-gold rounded-xl">M</button>
+                                    <button onclick="selectCustomSize('L')" class="size-btn py-2 text-xs font-bold border border-white/20 rounded-xl text-gray-300 hover:border-brand-gold">L</button>
+                                    <button onclick="selectCustomSize('XL')" class="size-btn py-2 text-xs font-bold border border-white/20 rounded-xl text-gray-300 hover:border-brand-gold">XL</button>
+                                    <button onclick="selectCustomSize('XXL')" class="size-btn py-2 text-xs font-bold border border-white/20 rounded-xl text-gray-300 hover:border-brand-gold">XXL</button>
+                                </div>
+                            </div>
+
+                            <div class="pt-2 border-t border-white/10 flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs text-gray-400 block">Giá áo tự thiết kế:</span>
+                                    <span class="text-2xl font-bold text-brand-gold">390.000đ</span>
+                                </div>
+                                <button onclick="addCustomShirtToCart()" class="px-6 py-3 bg-gradient-to-r from-brand-gold to-yellow-600 text-black font-bold text-sm uppercase tracking-wider rounded-xl shadow-lg hover:shadow-brand-gold/20 transition-all flex items-center gap-2">
+                                    <i class="fa-solid fa-cart-plus"></i> Thêm Vào Giỏ
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. TRANG BỘ SƯU TẬP ÁO (#collection) -->
+        <section id="view-collection" class="page-view">
+            <!-- Header -->
+            <div class="bg-brand-card py-12 border-b border-white/10">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-brand-gold text-xs uppercase tracking-[0.3em] font-semibold">Wearu Studio Catalog</span>
+                    <h1 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">Bộ Sưu Tập Áo Cao Cấp</h1>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    
+                    <!-- Sidebar Filters -->
+                    <aside class="w-full lg:w-64 space-y-6 shrink-0">
+                        <!-- Category Filter -->
+                        <div class="bg-brand-card p-5 rounded-2xl border border-white/10">
+                            <h3 class="font-bold text-sm text-white mb-4 uppercase tracking-wider border-b border-white/10 pb-2">Danh Mục</h3>
+                            <div class="space-y-2 text-sm">
+                                <label class="flex items-center gap-3 text-gray-300 hover:text-brand-gold cursor-pointer">
+                                    <input type="radio" name="catFilter" value="all" checked onchange="filterProducts()" class="accent-brand-gold">
+                                    <span>Tất Cả Sản Phẩm</span>
+                                </label>
+                                <label class="flex items-center gap-3 text-gray-300 hover:text-brand-gold cursor-pointer">
+                                    <input type="radio" name="catFilter" value="tshirt" onchange="filterProducts()" class="accent-brand-gold">
+                                    <span>Áo Phông (T-Shirt)</span>
+                                </label>
+                                <label class="flex items-center gap-3 text-gray-300 hover:text-brand-gold cursor-pointer">
+                                    <input type="radio" name="catFilter" value="hoodie" onchange="filterProducts()" class="accent-brand-gold">
+                                    <span>Áo Hoodie & Nỉ</span>
+                                </label>
+                                <label class="flex items-center gap-3 text-gray-300 hover:text-brand-gold cursor-pointer">
+                                    <input type="radio" name="catFilter" value="polo" onchange="filterProducts()" class="accent-brand-gold">
+                                    <span>Áo Polo</span>
                                 </label>
                             </div>
                         </div>
 
-                        <!-- 2. Add Custom Text -->
-                        <div class="border-t border-gray-100 pt-4">
-                            <label class="block text-xs uppercase font-bold tracking-wider text-gray-700 mb-2">2. Nội Dung Chữ Trên Áo</label>
-                            <input type="text" id="text-input" value="WEARU STUDIO" oninput="updateText()" placeholder="Nhập chữ bạn muốn in..." class="w-full border border-gray-300 p-2.5 text-sm rounded focus:outline-none focus:border-brand-gold mb-3">
-                            
-                            <div class="grid grid-cols-2 gap-3 mb-3">
-                                <div>
-                                    <label class="block text-[11px] text-gray-500 mb-1">Kiểu Font Chữ</label>
-                                    <select id="font-select" onchange="updateTextFont()" class="w-full border border-gray-300 p-2 text-xs rounded focus:outline-none font-medium text-gray-700">
-                                        <optgroup label="🔥 Streetwear & Cực Ngầu">
-                                            <option value="f-bebas" selected>Bebas Neue (Streetwear Tall)</option>
-                                            <option value="f-montserrat">Montserrat (Đột Phá Bold)</option>
-                                            <option value="f-oswald">Oswald (Gọn Gàng Cứng Cáp)</option>
-                                            <option value="f-righteous">Righteous (Hiện Đại Cyberpunk)</option>
-                                        </optgroup>
-                                        <optgroup label="✍️ Viết Tay & Nghệ Thuật">
-                                            <option value="f-dancing">Dancing Script (Mềm Mại)</option>
-                                            <option value="f-greatvibes">Great Vibes (Sang Trọng Cầu Kỳ)</option>
-                                            <option value="f-pacifico">Pacifico (Retro Vui Nhộn)</option>
-                                            <option value="f-satisfy">Satisfy (Viết Tay Cực Phiêu)</option>
-                                        </optgroup>
-                                        <optgroup label="🏛️ Cổ Điển & Hoàng Gia">
-                                            <option value="f-serif">Playfair Display (Quý Phái)</option>
-                                            <option value="f-cinzel">Cinzel (Phong Cách La Mã)</option>
-                                            <option value="f-gothic">Gothic / Dark Wear (Độc Lạ)</option>
-                                        </optgroup>
-                                        <optgroup label="✨ Đơn Giản & Độc Đáo">
-                                            <option value="f-sans">Plus Jakarta (Tối Giản Clean)</option>
-                                            <option value="f-pixel">Press Start (Game 8-Bit Pixel)</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-[11px] text-gray-500 mb-1">Màu Chữ</label>
-                                    <div class="flex space-x-1.5 pt-1">
-                                        <button onclick="changeTextColor('#1A1A1A')" class="w-6 h-6 rounded-full bg-black border"></button>
-                                        <button onclick="changeTextColor('#FFFFFF')" class="w-6 h-6 rounded-full bg-white border"></button>
-                                        <button onclick="changeTextColor('#D4AF37')" class="w-6 h-6 rounded-full bg-yellow-600 border"></button>
-                                        <button onclick="changeTextColor('#DC2626')" class="w-6 h-6 rounded-full bg-red-600 border"></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-3">
-                                <div>
-                                    <label class="block text-[11px] text-gray-500 mb-1">Kích Thước Chữ</label>
-                                    <input type="range" id="font-size" min="12" max="42" value="26" oninput="updateFontSize()" class="w-full accent-brand-gold">
-                                </div>
-                                <div>
-                                    <label class="block text-[11px] text-gray-500 mb-1">Vị Trí Dọc</label>
-                                    <input type="range" id="text-y" min="15" max="85" value="30" oninput="updateTextPosition()" class="w-full accent-brand-gold">
-                                </div>
+                        <!-- Price Range Filter -->
+                        <div class="bg-brand-card p-5 rounded-2xl border border-white/10">
+                            <h3 class="font-bold text-sm text-white mb-4 uppercase tracking-wider border-b border-white/10 pb-2">Khoảng Giá</h3>
+                            <input type="range" id="priceRange" min="200000" max="800000" step="50000" value="800000" oninput="updatePriceFilter(this.value)" class="w-full accent-brand-gold">
+                            <div class="flex justify-between text-xs text-gray-400 mt-2">
+                                <span>200.000đ</span>
+                                <span id="priceValue" class="text-brand-gold font-bold">Dưới 800.000đ</span>
                             </div>
                         </div>
+                    </aside>
 
-                        <!-- 3. Upload Logo / Image -->
-                        <div class="border-t border-gray-100 pt-4">
-                            <label class="block text-xs uppercase font-bold tracking-wider text-gray-700 mb-2">3. Thêm Ảnh / Logo Sáng Tạo</label>
-                            <input type="file" id="image-upload" accept="image/*" onchange="handleImageUpload(event)" class="text-xs text-gray-500 file:mr-3 file:py-2 file:px-4 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-brand-dark file:text-white hover:file:bg-brand-gold file:cursor-pointer">
-                            <button id="remove-img-btn" onclick="removeUploadedImage()" class="hidden text-[11px] text-red-500 underline ml-2 mt-1">Xóa ảnh</button>
-                        </div>
-
-                        <!-- 4. Select Size & Quantity -->
-                        <div class="border-t border-gray-100 pt-4 grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs uppercase font-bold tracking-wider text-gray-700 mb-2">Kích Thước Size</label>
-                                <select id="shirt-size" class="w-full border border-gray-300 p-2 text-sm rounded focus:outline-none focus:border-brand-gold">
-                                    <option value="S">Size S (45 - 55 kg)</option>
-                                    <option value="M" selected>Size M (55 - 65 kg)</option>
-                                    <option value="L">Size L (65 - 75 kg)</option>
-                                    <option value="XL">Size XL (75 - 85 kg)</option>
-                                    <option value="XXL">Size XXL (&gt; 85 kg)</option>
+                    <!-- Product Grid Area -->
+                    <main class="flex-grow">
+                        <!-- Sorting Header -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 bg-brand-card p-4 rounded-xl border border-white/10">
+                            <span class="text-xs text-gray-400" id="productCount">Hiển thị 8 sản phẩm</span>
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs text-gray-400 shrink-0">Sắp xếp theo:</span>
+                                <select id="sortSelect" onchange="filterProducts()" class="bg-black/50 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-brand-gold">
+                                    <option value="featured">Nổi bật nhất</option>
+                                    <option value="low-high">Giá: Thấp đến Cao</option>
+                                    <option value="high-low">Giá: Cao đến Thấp</option>
                                 </select>
                             </div>
-                            <div>
-                                <label class="block text-xs uppercase font-bold tracking-wider text-gray-700 mb-2">Số Lượng</label>
-                                <input type="number" id="shirt-qty" value="1" min="1" max="100" onchange="calculateCustomPrice()" class="w-full border border-gray-300 p-2 text-sm rounded focus:outline-none focus:border-brand-gold">
+                        </div>
+
+                        <!-- Products Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="productGrid">
+                            <!-- Populated via JS -->
+                        </div>
+                    </main>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. TRANG LIÊN HỆ (#contact) -->
+        <section id="view-contact" class="page-view">
+            <!-- Header -->
+            <div class="bg-brand-card py-12 border-b border-white/10">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <span class="text-brand-gold text-xs uppercase tracking-[0.3em] font-semibold">Get In Touch</span>
+                    <h1 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">Liên Hệ Wearu Studio</h1>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-2">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ mọi thắc mắc của bạn.</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Contact Info & Map (5 cols) -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div class="bg-brand-card p-6 rounded-2xl border border-white/10 space-y-6">
+                            <h3 class="font-serif text-xl font-bold text-white border-b border-white/10 pb-3">Thông Tin Showroom</h3>
+                            <div class="flex items-start gap-4 text-sm text-gray-300">
+                                <div class="w-10 h-10 bg-brand-gold/10 text-brand-gold rounded-xl flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <span class="font-bold text-white block">Địa chỉ Studio:</span>
+                                    <span>284 Lý Tự Trọng, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 text-sm text-gray-300">
+                                <div class="w-10 h-10 bg-brand-gold/10 text-brand-gold rounded-xl flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="font-bold text-white block">Hotline tư vấn:</span>
+                                    <span>1900 8888 / 090 123 4567</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 text-sm text-gray-300">
+                                <div class="w-10 h-10 bg-brand-gold/10 text-brand-gold rounded-xl flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="font-bold text-white block">Email hỗ trợ:</span>
+                                    <span>support@wearu.studio</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Total Price & Order Action -->
-                    <div class="border-t border-gray-200 pt-4">
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs text-gray-500 uppercase font-semibold">Giá thành dự kiến:</span>
-                            <span id="custom-total-price" class="text-2xl font-serif font-bold text-brand-gold">350,000 đ</span>
+                        <!-- Google Map Embed -->
+                        <div class="rounded-2xl overflow-hidden border border-white/10 h-64">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.460232420993!2d106.69532831533413!3d10.77601999232187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3af50a0001%3A0x6b2b719488a03270!2zTMO9IFThu7EgbHLhuqluZywgQuG6v24gVGjDoG5oLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2s!4v1680000000000!5m2!1svi!2s" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
                         </div>
-                        <button onclick="addCustomToCart()" class="w-full bg-brand-dark text-white py-3.5 px-4 text-xs uppercase tracking-widest font-semibold hover:bg-brand-gold transition-colors flex items-center justify-center space-x-2">
-                            <i class="fa-solid fa-cart-plus"></i>
-                            <span>Thêm Mẫu Này Vào Giỏ Hàng</span>
-                        </button>
                     </div>
 
-                </div>
-            </div>
-        </div>
-    </section>
+                    <!-- Contact Form & FAQ (7 cols) -->
+                    <div class="lg:col-span-7 space-y-12">
+                        <!-- Message Form -->
+                        <div class="bg-brand-card p-8 rounded-2xl border border-white/10">
+                            <h3 class="font-serif text-2xl font-bold text-white mb-6">Gửi Tin Nhắn Cho Chúng Tôi</h3>
+                            <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="text-xs text-gray-400 block mb-1">Họ và Tên *</label>
+                                        <input type="text" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="Nguyễn Văn A">
+                                    </div>
+                                    <div>
+                                        <label class="text-xs text-gray-400 block mb-1">Số Điện Thoại *</label>
+                                        <input type="tel" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="0901234567">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="text-xs text-gray-400 block mb-1">Email</label>
+                                    <input type="email" class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="email@example.com">
+                                </div>
+                                <div>
+                                    <label class="text-xs text-gray-400 block mb-1">Nội dung tin nhắn *</label>
+                                    <textarea rows="4" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="Bạn cần tư vấn về thiết kế hay đơn hàng?"></textarea>
+                                </div>
+                                <button type="submit" class="w-full py-3.5 bg-brand-gold text-black font-bold uppercase tracking-wider text-sm rounded-xl hover:bg-yellow-500 transition-colors">
+                                    Gửi Yêu Cầu Hỗ Trợ
+                                </button>
+                            </form>
+                        </div>
 
-    <!-- Product Collections Section -->
-    <section id="collections" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-brand-gold tracking-widest uppercase text-xs font-bold">Sản Phẩm Độc Bản</span>
-                <h2 class="text-3xl sm:text-4xl font-serif mt-2 text-brand-dark">Bộ Sưu Tập Có Sẵn</h2>
-            </div>
+                        <!-- FAQ Accordion -->
+                        <div class="bg-brand-card p-8 rounded-2xl border border-white/10">
+                            <h3 class="font-serif text-xl font-bold text-white mb-6">Câu Hỏi Thường Gặp (FAQ)</h3>
+                            <div class="space-y-4">
+                                <details class="group bg-black/30 rounded-xl border border-white/5 p-4 [&_summary::-webkit-details-marker]:hidden">
+                                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-white">
+                                        <span>Áo tự thiết kế mất bao lâu để sản xuất và giao?</span>
+                                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-gold"></i></span>
+                                    </summary>
+                                    <p class="mt-3 text-xs text-gray-400 leading-relaxed">
+                                        Wearu xử lý và in ấn trong vòng 24-48 giờ. Thời gian vận chuyển toàn quốc từ 2 - 4 ngày làm việc.
+                                    </p>
+                                </details>
 
-            <!-- Filter Buttons -->
-            <div class="flex justify-center flex-wrap gap-2 sm:gap-3 mb-10 overflow-x-auto pb-2">
-                <button onclick="filterProducts('all')" class="filter-btn active px-4 py-2 text-xs uppercase tracking-widest border border-brand-dark bg-brand-dark text-white transition-all">Tất Cả Áo</button>
-                <button onclick="filterProducts('tshirt')" class="filter-btn px-4 py-2 text-xs uppercase tracking-widest border border-gray-300 text-gray-600 hover:border-brand-dark transition-all">Áo Thun</button>
-                <button onclick="filterProducts('hoodie')" class="filter-btn px-4 py-2 text-xs uppercase tracking-widest border border-gray-300 text-gray-600 hover:border-brand-dark transition-all">Áo Hoodie</button>
-                <button onclick="filterProducts('jacket')" class="filter-btn px-4 py-2 text-xs uppercase tracking-widest border border-gray-300 text-gray-600 hover:border-brand-dark transition-all">Áo Khoác Dù</button>
-                <button onclick="filterProducts('longsleeve')" class="filter-btn px-4 py-2 text-xs uppercase tracking-widest border border-gray-300 text-gray-600 hover:border-brand-dark transition-all">Áo Tay Dài</button>
-                <button onclick="filterProducts('sport')" class="filter-btn px-4 py-2 text-xs uppercase tracking-widest border border-gray-300 text-gray-600 hover:border-brand-dark transition-all">Áo Thể Thao</button>
-            </div>
+                                <details class="group bg-black/30 rounded-xl border border-white/5 p-4 [&_summary::-webkit-details-marker]:hidden">
+                                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-white">
+                                        <span>Chất lượng hình in custom có dễ bong tróc không?</span>
+                                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-gold"></i></span>
+                                    </summary>
+                                    <p class="mt-3 text-xs text-gray-400 leading-relaxed">
+                                        Wearu ứng dụng công nghệ in kỹ thuật số DTG thấm trực tiếp vào sợi vải, đảm bảo giữ màu sắc nét và bền bỉ qua hơn 100 lần giặt máy.
+                                    </p>
+                                </details>
 
-            <!-- Product Grid -->
-            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Products dynamically inserted via JavaScript -->
-            </div>
-        </div>
-    </section>
+                                <details class="group bg-black/30 rounded-xl border border-white/5 p-4 [&_summary::-webkit-details-marker]:hidden">
+                                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-white">
+                                        <span>Chính sách đổi trả sản phẩm thế nào?</span>
+                                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-gold"></i></span>
+                                    </summary>
+                                    <p class="mt-3 text-xs text-gray-400 leading-relaxed">
+                                        Chúng tôi cam kết 1 đổi 1 miễn phí nếu sản phẩm có lỗi từ nhà sản xuất, nhầm size hoặc hình in không đúng thiết kế duyệt của bạn.
+                                    </p>
+                                </details>
+                            </div>
+                        </div>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-brand-dark text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-gray-800 pb-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="font-serif text-2xl font-bold tracking-widest text-white mb-4">WEARU.STUDIO</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4">Thương hiệu thời trang chuyên áo thiết kế, áo thun, hoodie & khoác dù cao cấp.</p>
-                    <div class="flex space-x-4 text-gray-400">
-                        <a href="#" class="hover:text-brand-gold"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="hover:text-brand-gold"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="hover:text-brand-gold"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
-                <div>
-                    <h4 class="text-sm font-semibold tracking-widest uppercase text-brand-gold mb-4">Showroom</h4>
-                    <p class="text-gray-400 text-sm mb-2"><i class="fa-solid fa-location-dot mr-2"></i> Đường Số 24, Phường 11, Quận 6, TPHCM</p>
-                    <p class="text-gray-400 text-sm mb-2"><i class="fa-solid fa-phone mr-2"></i> 0908048037</p>
-                    <p class="text-gray-400 text-sm"><i class="fa-solid fa-envelope mr-2"></i> wearu.studio@gmail.com</p>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold tracking-widest uppercase text-brand-gold mb-4">Giờ Mở Cửa</h4>
-                    <p class="text-gray-400 text-sm mb-1">Thứ 2 - Thứ 7: 9:00 - 21:00</p>
-                    <p class="text-gray-400 text-sm">Chủ Nhật: 10:00 - 20:00</p>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold tracking-widest uppercase text-brand-gold mb-4">Đăng Ký Nhận Tin</h4>
-                    <p class="text-gray-400 text-sm mb-4">Nhận thông tin về Ưu đãi thiết kế mới nhất.</p>
-                    <form class="flex" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký!');">
-                        <input type="email" placeholder="Email của bạn..." class="bg-gray-800 text-white px-3 py-2 text-sm w-full focus:outline-none">
-                        <button class="bg-brand-gold px-4 py-2 text-white hover:bg-brand-accent transition-colors"><i class="fa-solid fa-paper-plane"></i></button>
-                    </form>
-                </div>
             </div>
-        </div>
-        <div class="text-center text-gray-500 text-xs pt-8">
-            &copy; 2026 Wearu.studio. All rights reserved. Custom Shirt Collection.
-        </div>
-    </footer>
+        </section>
 
-    <!-- Cart Sidebar Overlay -->
-    <div id="cart-sidebar" class="fixed inset-0 z-50 invisible opacity-0 transition-all duration-300">
-        <div class="absolute inset-0 bg-black/50" onclick="toggleCart()"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white p-6 flex flex-col justify-between">
-            <div>
-                <div class="flex justify-between items-center border-b pb-4">
-                    <h3 class="font-serif text-xl font-bold">Giỏ Hàng Của Bạn</h3>
-                    <button onclick="toggleCart()" class="text-gray-500 hover:text-black"><i class="fa-solid fa-xmark text-xl"></i></button>
-                </div>
-                <div id="cart-items" class="py-4 space-y-4 max-h-[60vh] overflow-y-auto">
-                    <p class="text-gray-500 text-sm text-center py-8">Giỏ hàng hiện đang trống.</p>
-                </div>
+    </main>
+
+    <!-- SHOPPING CART SLIDER / DRAWER -->
+    <div id="cartDrawerBackdrop" onclick="closeCartDrawer()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-[420px] bg-brand-card border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between shadow-2xl">
+        
+        <!-- Cart Header -->
+        <div class="p-5 border-b border-white/10 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-bag-shopping text-brand-gold"></i>
+                <h3 class="font-bold text-white text-base uppercase tracking-wider">Giỏ Hàng Của Bạn</h3>
             </div>
-            <div class="border-t pt-4">
-                <div class="flex justify-between text-lg font-bold mb-4">
+            <button onclick="closeCartDrawer()" class="text-gray-400 hover:text-white p-2">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Cart Items List -->
+        <div class="flex-grow overflow-y-auto p-5 space-y-4" id="cartItemList">
+            <!-- Populated via JS -->
+        </div>
+
+        <!-- Cart Footer -->
+        <div class="p-5 border-t border-white/10 bg-black/40 space-y-4">
+            <div class="space-y-1 text-sm">
+                <div class="flex justify-between text-gray-400">
+                    <span>Tạm tính:</span>
+                    <span id="cartSubtotal" class="text-white font-semibold">0đ</span>
+                </div>
+                <div class="flex justify-between text-gray-400">
+                    <span>Phí giao hàng:</span>
+                    <span class="text-brand-gold">Miễn phí</span>
+                </div>
+                <div class="flex justify-between text-base font-bold text-white pt-2 border-t border-white/10">
                     <span>Tổng tiền:</span>
-                    <span id="cart-total" class="text-brand-gold">0 đ</span>
+                    <span id="cartTotal" class="text-brand-gold text-xl">0đ</span>
                 </div>
-                <button onclick="alert('Cảm ơn bạn đã đặt đơn hàng! Wearu.studio sẽ sớm liên hệ xác nhận.')" class="w-full bg-brand-dark text-white py-3 uppercase text-xs tracking-widest font-semibold hover:bg-brand-gold transition-colors">
-                    Thanh Toán
-                </button>
             </div>
+            <button onclick="openCheckoutModal()" class="w-full py-4 bg-gradient-to-r from-brand-gold to-yellow-600 text-black font-bold text-sm uppercase tracking-wider rounded-xl shadow-lg hover:shadow-brand-gold/20 transition-all">
+                Tiến Hành Thanh Toán
+            </button>
         </div>
     </div>
 
-    <!-- JavaScript Customizer & App Logic -->
+    <!-- PRODUCT QUICK VIEW MODAL -->
+    <div id="productModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-brand-card border border-white/10 rounded-2xl max-w-3xl w-full p-6 relative overflow-hidden text-left" id="productModalContent">
+            <!-- Populated dynamically -->
+        </div>
+    </div>
+
+    <!-- CHECKOUT FORM MODAL -->
+    <div id="checkoutModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-brand-card border border-white/10 rounded-2xl max-w-xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <h3 class="font-serif text-2xl font-bold text-white mb-2">Thanh Toán Đơn Hàng</h3>
+            <p class="text-xs text-gray-400 mb-6">Vui lòng điền thông tin giao hàng bên dưới để hoàn tất.</p>
+            
+            <form id="checkoutForm" onsubmit="processCheckout(event)" class="space-y-4 text-left">
+                <div>
+                    <label class="text-xs text-gray-400 block mb-1">Họ và tên người nhận *</label>
+                    <input type="text" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="Nguyễn Văn A">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-1">Số điện thoại *</label>
+                        <input type="tel" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="0901234567">
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-1">Email xác nhận</label>
+                        <input type="email" class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="email@gmail.com">
+                    </div>
+                </div>
+                <div>
+                    <label class="text-xs text-gray-400 block mb-1">Địa chỉ nhận hàng *</label>
+                    <input type="text" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="Số nhà, tên đường, Phường/Xã, Quận/Huyện, Tỉnh/TP">
+                </div>
+                <div>
+                    <label class="text-xs text-gray-400 block mb-1">Phương thức thanh toán</label>
+                    <div class="grid grid-cols-2 gap-3 mt-1">
+                        <label class="border border-brand-gold/50 bg-brand-gold/10 p-3 rounded-xl flex items-center gap-2 cursor-pointer text-xs text-white">
+                            <input type="radio" name="payment" checked class="accent-brand-gold">
+                            <span>COD (Thanh toán khi nhận)</span>
+                        </label>
+                        <label class="border border-white/10 bg-black/20 p-3 rounded-xl flex items-center gap-2 cursor-pointer text-xs text-gray-300">
+                            <input type="radio" name="payment" class="accent-brand-gold">
+                            <span>Chuyển khoản QR Bank</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                    <div>
+                        <span class="text-xs text-gray-400 block">Tổng thanh toán:</span>
+                        <span id="checkoutTotal" class="text-xl font-bold text-brand-gold">0đ</span>
+                    </div>
+                    <button type="submit" class="px-8 py-3.5 bg-brand-gold text-black font-bold uppercase tracking-wider text-xs rounded-xl hover:bg-yellow-500 transition-colors">
+                        Xác Nhận Đặt Hàng
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-white/10 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <!-- Col 1: Brand -->
+                <div class="space-y-4">
+                    <a href="#home" class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full border border-brand-gold flex items-center justify-center bg-black">
+                            <span class="font-serif font-bold text-base text-brand-gold">W</span>
+                        </div>
+                        <span class="font-serif font-bold text-xl tracking-widest text-white">WEARU<span class="text-brand-gold">.</span></span>
+                    </a>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Thương hiệu thời trang cao cấp kết hợp công nghệ tự thiết kế cá nhân hóa hàng đầu tại Việt Nam.
+                    </p>
+                    <div class="flex space-x-4 text-gray-400 text-lg">
+                        <a href="#" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Khám Phá</h4>
+                    <ul class="space-y-2.5 text-xs text-gray-400">
+                        <li><a href="#about" class="hover:text-brand-gold transition-colors">Về Thương Hiệu</a></li>
+                        <li><a href="#customizer" class="hover:text-brand-gold transition-colors">Tự Thiết Kế Áo 3D</a></li>
+                        <li><a href="#collection" class="hover:text-brand-gold transition-colors">Bộ Sưu Tập Áo</a></li>
+                        <li><a href="#contact" class="hover:text-brand-gold transition-colors">Liên Hệ & Hỗ Trợ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Support -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Chính Sách</h4>
+                    <ul class="space-y-2.5 text-xs text-gray-400">
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Hướng dẫn chọn Size áo</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Chính sách vận chuyển</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Chính sách đổi trả 15 ngày</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Bảo mật thông tin</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Newsletter -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Đăng Ký Nhận Tin</h4>
+                    <p class="text-xs text-gray-400 mb-3">Nhận ngay ưu đãi 10% cho đơn hàng thiết kế đầu tiên.</p>
+                    <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký!');" class="space-y-2">
+                        <input type="email" required placeholder="Nhập email của bạn..." class="w-full bg-brand-card border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-gold">
+                        <button type="submit" class="w-full py-2 bg-brand-gold text-black font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-yellow-500 transition-colors">
+                            Đăng Ký
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>© 2026 Wearu.studio. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <span>Designed with Luxury Minimalist Standard</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT APP LOGIC -->
     <script>
-        const products = [
+        // --- 1. PRODUCT DATA ---
+        const productsData = [
             {
-                id: 1,
-                name: "Áo Thun Cotton Oversize - 'Wearu Minimal'",
-                category: "tshirt",
-                price: 350000,
-                image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=800&auto=format&fit=crop",
-                tag: "Best Seller"
-            },
-            {
-                id: 2,
-                name: "Áo Hoodie Fleece 'Urban Dark'",
-                category: "hoodie",
-                price: 580000,
-                image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=800&auto=format&fit=crop",
-                tag: "Hot Trend"
-            },
-            {
-                id: 3,
-                name: "Áo Khoác Dù Chống Nước 'WindBreaker Pro'",
-                category: "jacket",
-                price: 650000,
-                image: "https://images.unsplash.com/photo-1548883354-7622d03aca27?q=80&w=800&auto=format&fit=crop",
-                tag: "Mới"
-            },
-            {
-                id: 4,
-                name: "Áo Tay Dài Basic Long-Sleeve Cotton",
-                category: "longsleeve",
-                price: 390000,
-                image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=800&auto=format&fit=crop",
-                tag: ""
-            },
-            {
-                id: 5,
-                name: "Áo Thể Thao Pro-Dry Co Giãn 4 Chiều",
-                category: "sport",
+                id: 'p1',
+                name: 'Áo Phông Oversized Minimalist Gold',
+                category: 'tshirt',
                 price: 320000,
-                image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop",
-                tag: "Thoáng Khí"
+                rating: 5.0,
+                image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80',
+                desc: 'Phông Cotton 280GSM dày dặn, form Oversized hiện đại chuẩn Studio. Logo thêu kim tuyến tinh tế.'
             },
             {
-                id: 6,
-                name: "Áo Hoodie Zip-Up Unisex Basic",
-                category: "hoodie",
-                price: 620000,
-                image: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=800&auto=format&fit=crop",
-                tag: ""
+                id: 'p2',
+                name: 'Áo Hoodie Studio Essential Heavyweight',
+                category: 'hoodie',
+                price: 550000,
+                rating: 4.9,
+                image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80',
+                desc: 'Nỉ chân cua cao cấp, mũ đúp 2 lớp giữ form chuẩn streetwear. Thích hợp cho thời tiết thu đông.'
+            },
+            {
+                id: 'p3',
+                name: 'Áo Polo Sợi Tre Bamboo Luxury',
+                category: 'polo',
+                price: 420000,
+                rating: 4.8,
+                image: 'https://images.unsplash.com/photo-1625910513413-730303e913a8?auto=format&fit=crop&w=800&q=80',
+                desc: 'Chất liệu vải tre tự nhiên kháng khuẩn, mềm mịn thoáng mát. Thiết kế cổ bệt lịch sự.'
+            },
+            {
+                id: 'p4',
+                name: 'Áo Phông Graphic Custom Studio',
+                category: 'tshirt',
+                price: 350000,
+                rating: 4.7,
+                image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80',
+                desc: 'Hình in kỹ thuật số DTG sắc nét bền màu. Dáng Unisex vừa vặn cho cả nam và nữ.'
+            },
+            {
+                id: 'p5',
+                name: 'Sweatshirt Premium Wearu Monogram',
+                category: 'hoodie',
+                price: 480000,
+                rating: 4.9,
+                image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=80',
+                desc: 'Áo nỉ chui đầu phong cách tối giản sang trọng, dễ phối đồ kết hợp jeans hoặc quần tây.'
+            },
+            {
+                id: 'p6',
+                name: 'Áo Polo Casual Black Edition',
+                category: 'polo',
+                price: 390000,
+                rating: 4.8,
+                image: 'https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=800&q=80',
+                desc: 'Gam màu đen huyền bí lịch lãm. Vải pique thoáng khí thấm hút mồ hôi tối đa.'
             }
         ];
 
+        // --- 2. GLOBAL STATE ---
         let cart = [];
-        const baseShirtPrice = 350000;
-        let activePart = 'body';
+        let customizerState = {
+            color: '#ffffff',
+            text: '',
+            font: 'Plus Jakarta Sans',
+            textColor: '#000000',
+            size: 'M',
+            view: 'front',
+            imageSrc: null
+        };
 
-        function setActivePartTab(part) {
-            activePart = part;
-            document.querySelectorAll('.part-tab').forEach(tab => {
-                tab.classList.remove('border-brand-gold', 'font-bold', 'text-brand-dark');
-                tab.classList.add('border-transparent', 'text-gray-500');
+        // --- 3. CLIENT-SIDE HASH ROUTER ---
+        const routes = ['home', 'about', 'customizer', 'collection', 'contact'];
+
+        function handleRouting() {
+            let hash = window.location.hash.replace('#', '');
+            if (!routes.includes(hash)) {
+                hash = 'home';
+            }
+
+            // Hide all pages
+            document.querySelectorAll('.page-view').forEach(view => {
+                view.classList.remove('active');
             });
 
-            const currentTab = document.getElementById(`tab-${part}`);
-            if (currentTab) {
-                currentTab.classList.remove('border-transparent', 'text-gray-500');
-                currentTab.classList.add('border-brand-gold', 'font-bold', 'text-brand-dark');
+            // Show active page
+            const targetView = document.getElementById(`view-${hash}`);
+            if (targetView) {
+                targetView.classList.add('active');
+            }
+
+            // Update navigation link state
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const route = link.getAttribute('data-route');
+                if (route === hash) {
+                    link.className = 'nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-brand-gold border-b-2 border-brand-gold';
+                } else {
+                    link.className = 'nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-gray-300 hover:text-brand-gold';
+                }
+            });
+
+            // Auto scroll top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('hashchange', handleRouting);
+        window.addEventListener('DOMContentLoaded', () => {
+            handleRouting();
+            renderBestSellers();
+            filterProducts();
+        });
+
+        function navigateTo(route, categoryFilter = null) {
+            window.location.hash = `#${route}`;
+            if (categoryFilter && route === 'collection') {
+                setTimeout(() => {
+                    const radio = document.querySelector(`input[name="catFilter"][value="${categoryFilter}"]`);
+                    if (radio) {
+                        radio.checked = true;
+                        filterProducts();
+                    }
+                }, 100);
             }
         }
 
-        function selectPart(part) {
-            setActivePartTab(part);
+        // --- 4. SHIRT CUSTOMIZER ENGINE ---
+        function changeShirtColor(colorHex) {
+            customizerState.color = colorHex;
+            document.getElementById('shirtBody').setAttribute('fill', colorHex);
         }
 
-        function applyPartColor(colorHex) {
-            if (activePart === 'body') {
-                document.getElementById('part-body').style.fill = colorHex;
-            } else if (activePart === 'sleeves') {
-                document.getElementById('part-left-sleeve').style.fill = colorHex;
-                document.getElementById('part-right-sleeve').style.fill = colorHex;
-            } else if (activePart === 'collar') {
-                document.getElementById('part-collar').style.fill = colorHex;
+        function switchShirtView(view) {
+            customizerState.view = view;
+            const frontBtn = document.getElementById('viewFrontBtn');
+            const backBtn = document.getElementById('viewBackBtn');
+            const frontText = document.getElementById('frontTextLayer');
+            const backText = document.getElementById('backTextLayer');
+
+            if (view === 'front') {
+                frontBtn.className = 'px-4 py-1.5 text-xs font-semibold rounded-lg bg-brand-gold text-black transition-all';
+                backBtn.className = 'px-4 py-1.5 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all';
+                frontText.classList.remove('hidden');
+                backText.classList.add('hidden');
+            } else {
+                backBtn.className = 'px-4 py-1.5 text-xs font-semibold rounded-lg bg-brand-gold text-black transition-all';
+                frontBtn.className = 'px-4 py-1.5 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all';
+                backText.classList.remove('hidden');
+                frontText.classList.add('hidden');
             }
         }
 
-        function setAllColor(colorHex) {
-            document.getElementById('part-body').style.fill = colorHex;
-            document.getElementById('part-left-sleeve').style.fill = colorHex;
-            document.getElementById('part-right-sleeve').style.fill = colorHex;
-            document.getElementById('part-collar').style.fill = colorHex;
+        function updateCustomText() {
+            const inputVal = document.getElementById('customTextInput').value;
+            const fontVal = document.getElementById('fontSelect').value;
+            const colorVal = document.getElementById('textColorInput').value;
+
+            customizerState.text = inputVal;
+            customizerState.font = fontVal;
+            customizerState.textColor = colorVal;
+
+            const textDisplay = document.getElementById('customTextDisplay');
+            textDisplay.innerText = inputVal;
+            textDisplay.style.fontFamily = fontVal;
+            textDisplay.style.color = colorVal;
         }
 
-        function updateText() {
-            const val = document.getElementById('text-input').value;
-            document.getElementById('canvas-text').innerText = val || '';
-        }
-
-        function updateTextFont() {
-            const fontClass = document.getElementById('font-select').value;
-            const textElem = document.getElementById('canvas-text');
-            textElem.className = `cursor-move select-none transition-all duration-150 absolute ${fontClass}`;
-        }
-
-        function changeTextColor(colorHex) {
-            document.getElementById('canvas-text').style.color = colorHex;
-        }
-
-        function updateFontSize() {
-            const size = document.getElementById('font-size').value;
-            document.getElementById('canvas-text').style.fontSize = size + 'px';
-        }
-
-        function updateTextPosition() {
-            const yVal = document.getElementById('text-y').value;
-            document.getElementById('canvas-text').style.top = yVal + '%';
-        }
-
-        function handleImageUpload(event) {
-            const file = event.target.files[0];
+        function handleImageUpload(e) {
+            const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
-                    const imgElem = document.getElementById('canvas-img');
-                    imgElem.src = e.target.result;
-                    imgElem.classList.remove('hidden');
-                    document.getElementById('remove-img-btn').classList.remove('hidden');
-                }
+                reader.onload = function(evt) {
+                    customizerState.imageSrc = evt.target.result;
+                    const imgDisplay = document.getElementById('customImageDisplay');
+                    const imgLayer = document.getElementById('customImageLayer');
+                    imgDisplay.src = evt.target.result;
+                    imgLayer.classList.remove('hidden');
+                };
                 reader.readAsDataURL(file);
             }
         }
 
-        function removeUploadedImage() {
-            const imgElem = document.getElementById('canvas-img');
-            imgElem.src = '';
-            imgElem.classList.add('hidden');
-            document.getElementById('image-upload').value = '';
-            document.getElementById('remove-img-btn').classList.add('hidden');
+        function selectCustomSize(size) {
+            customizerState.size = size;
+            document.querySelectorAll('#customSizePicker .size-btn').forEach(btn => {
+                if (btn.innerText === size) {
+                    btn.className = 'size-btn py-2 text-xs font-bold border border-brand-gold bg-brand-gold/10 text-brand-gold rounded-xl';
+                } else {
+                    btn.className = 'size-btn py-2 text-xs font-bold border border-white/20 rounded-xl text-gray-300 hover:border-brand-gold';
+                }
+            });
         }
 
-        function calculateCustomPrice() {
-            const qty = parseInt(document.getElementById('shirt-qty').value) || 1;
-            const total = baseShirtPrice * qty;
-            document.getElementById('custom-total-price').innerText = total.toLocaleString('vi-VN') + ' đ';
+        function resetCustomizer() {
+            changeShirtColor('#ffffff');
+            document.getElementById('customTextInput').value = '';
+            document.getElementById('customImageLayer').classList.add('hidden');
+            updateCustomText();
         }
 
-        function addCustomToCart() {
-            const customText = document.getElementById('text-input').value;
-            const size = document.getElementById('shirt-size').value;
-            const qty = parseInt(document.getElementById('shirt-qty').value) || 1;
-
+        function addCustomShirtToCart() {
             const customItem = {
-                id: Date.now(),
-                name: `Áo Phông Phối Màu Studio (Size ${size}) - "${customText || 'Không chữ'}"`,
-                price: baseShirtPrice * qty,
-                image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=400&auto=format&fit=crop"
+                id: 'custom-' + Date.now(),
+                name: `Áo Tự Thiết Kế (${customizerState.size})`,
+                price: 390000,
+                size: customizerState.size,
+                image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=400&q=80',
+                isCustom: true,
+                details: customizerState.text ? `Chữ: "${customizerState.text}"` : 'Mẫu thiết kế riêng',
+                quantity: 1
             };
-
-            cart.push(customItem);
-            updateCart();
-            toggleCart();
+            addToCart(customItem);
+            openCartDrawer();
         }
 
-        function renderProducts(items) {
-            const grid = document.getElementById('product-grid');
-            grid.innerHTML = items.map(p => `
-                <div class="bg-white group border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-all">
-                    <div class="relative overflow-hidden h-80">
+        // --- 5. PRODUCTS & COLLECTION MANAGEMENT ---
+        function formatVND(amount) {
+            return amount.toLocaleString('vi-VN') + 'đ';
+        }
+
+        function renderBestSellers() {
+            const container = document.getElementById('homeBestSellers');
+            if (!container) return;
+
+            const bests = productsData.slice(0, 4);
+            container.innerHTML = bests.map(p => `
+                <div class="bg-brand-card border border-white/10 rounded-2xl overflow-hidden group hover:border-brand-gold/50 transition-all duration-300 flex flex-col justify-between">
+                    <div class="relative overflow-hidden h-64 bg-black/40">
                         <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        ${p.tag ? `<span class="absolute top-3 left-3 bg-brand-dark text-white text-[10px] uppercase font-bold tracking-widest px-2 py-1">${p.tag}</span>` : ''}
-                        <button onclick="addToCart(${p.id})" class="absolute bottom-4 left-4 right-4 bg-white/90 hover:bg-brand-gold hover:text-white text-brand-dark py-3 text-xs uppercase tracking-widest font-semibold transition-all translate-y-12 group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
-                            Thêm Vào Giỏ Hàng
+                        <button onclick="openProductModal('${p.id}')" class="absolute bottom-3 right-3 p-3 bg-black/80 hover:bg-brand-gold hover:text-black text-white rounded-xl backdrop-blur-md transition-colors text-xs font-bold">
+                            Xem Nhanh
                         </button>
                     </div>
-                    <div class="p-5">
-                        <h3 class="font-serif font-semibold text-lg text-brand-dark mb-2">${p.name}</h3>
-                        <p class="text-brand-gold font-medium">${p.price.toLocaleString('vi-VN')} đ</p>
+                    <div class="p-5 flex flex-col flex-grow justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-[10px] uppercase font-bold text-brand-gold tracking-widest">${p.category}</span>
+                                <span class="text-xs text-yellow-400 font-semibold"><i class="fa-solid fa-star text-[10px]"></i> ${p.rating}</span>
+                            </div>
+                            <h3 class="font-bold text-white text-base line-clamp-1 mb-2">${p.name}</h3>
+                        </div>
+                        <div class="flex justify-between items-center pt-3 border-t border-white/5">
+                            <span class="text-brand-gold font-bold text-lg">${formatVND(p.price)}</span>
+                            <button onclick="quickAddToCart('${p.id}')" class="p-2.5 bg-white/10 hover:bg-brand-gold hover:text-black text-white rounded-xl transition-colors">
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             `).join('');
         }
 
-        function filterProducts(category) {
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-brand-dark', 'text-white');
-                btn.classList.add('text-gray-600');
+        function filterProducts() {
+            const cat = document.querySelector('input[name="catFilter"]:checked')?.value || 'all';
+            const maxPrice = parseInt(document.getElementById('priceRange')?.value || 800000);
+            const sort = document.getElementById('sortSelect')?.value || 'featured';
+
+            let filtered = productsData.filter(p => {
+                const matchCat = cat === 'all' || p.category === cat;
+                const matchPrice = p.price <= maxPrice;
+                return matchCat && matchPrice;
             });
-            event.target.classList.add('bg-brand-dark', 'text-white');
 
-            if (category === 'all') {
-                renderProducts(products);
-            } else {
-                renderProducts(products.filter(p => p.category === category));
+            if (sort === 'low-high') {
+                filtered.sort((a, b) => a.price - b.price);
+            } else if (sort === 'high-low') {
+                filtered.sort((a, b) => b.price - a.price);
             }
-        }
 
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            cart.push(product);
-            updateCart();
-            toggleCart();
-        }
-
-        function updateCart() {
-            document.getElementById('cart-count').innerText = cart.length;
-            const cartItems = document.getElementById('cart-items');
+            const grid = document.getElementById('productGrid');
+            const countText = document.getElementById('productCount');
             
-            if (cart.length === 0) {
-                cartItems.innerHTML = `<p class="text-gray-500 text-sm text-center py-8">Giỏ hàng hiện đang trống.</p>`;
-            } else {
-                cartItems.innerHTML = cart.map((item, index) => `
-                    <div class="flex items-center space-x-4 border-b pb-3">
-                        <img src="${item.image}" class="w-16 h-16 object-cover rounded">
-                        <div class="flex-1">
-                            <h4 class="font-serif text-sm font-semibold">${item.name}</h4>
-                            <p class="text-xs text-brand-gold font-medium">${item.price.toLocaleString('vi-VN')} đ</p>
+            if (countText) countText.innerText = `Hiển thị ${filtered.length} sản phẩm`;
+
+            if (grid) {
+                if (filtered.length === 0) {
+                    grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-400">Không tìm thấy sản phẩm nào phù hợp với bộ lọc.</div>`;
+                    return;
+                }
+
+                grid.innerHTML = filtered.map(p => `
+                    <div class="bg-brand-card border border-white/10 rounded-2xl overflow-hidden group hover:border-brand-gold/50 transition-all duration-300 flex flex-col justify-between">
+                        <div class="relative overflow-hidden h-72 bg-black/40">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <button onclick="openProductModal('${p.id}')" class="absolute bottom-3 right-3 p-3 bg-black/80 hover:bg-brand-gold hover:text-black text-white rounded-xl backdrop-blur-md transition-colors text-xs font-bold">
+                                Xem Nhanh
+                            </button>
                         </div>
-                        <button onclick="removeFromCart(${index})" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash text-sm"></i></button>
+                        <div class="p-5 flex flex-col flex-grow justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-[10px] uppercase font-bold text-brand-gold tracking-widest">${p.category}</span>
+                                    <span class="text-xs text-yellow-400 font-semibold"><i class="fa-solid fa-star text-[10px]"></i> ${p.rating}</span>
+                                </div>
+                                <h3 class="font-bold text-white text-base line-clamp-1 mb-2">${p.name}</h3>
+                                <p class="text-xs text-gray-400 line-clamp-2 mb-4 font-light">${p.desc}</p>
+                            </div>
+                            <div class="flex justify-between items-center pt-3 border-t border-white/5">
+                                <span class="text-brand-gold font-bold text-lg">${formatVND(p.price)}</span>
+                                <button onclick="quickAddToCart('${p.id}')" class="px-4 py-2 bg-brand-gold text-black font-bold rounded-xl text-xs hover:bg-yellow-500 transition-colors flex items-center gap-1.5">
+                                    <i class="fa-solid fa-cart-plus"></i> Thêm
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 `).join('');
             }
-
-            const total = cart.reduce((sum, item) => sum + item.price, 0);
-            document.getElementById('cart-total').innerText = total.toLocaleString('vi-VN') + ' đ';
         }
 
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCart();
+        function updatePriceFilter(val) {
+            document.getElementById('priceValue').innerText = `Dưới ${formatVND(parseInt(val))}`;
+            filterProducts();
         }
 
-        function toggleCart() {
-            const sidebar = document.getElementById('cart-sidebar');
-            sidebar.classList.toggle('invisible');
-            sidebar.classList.toggle('opacity-0');
+        // --- 6. SHOPPING CART LOGIC ---
+        function quickAddToCart(productId) {
+            const product = productsData.find(p => p.id === productId);
+            if (!product) return;
+
+            const item = {
+                id: product.id + '-M',
+                productId: product.id,
+                name: product.name,
+                price: product.price,
+                size: 'M',
+                image: product.image,
+                quantity: 1
+            };
+            addToCart(item);
+            openCartDrawer();
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProducts(products);
-        });
+        function addToCart(item) {
+            const existingIndex = cart.findIndex(i => i.id === item.id);
+            if (existingIndex > -1) {
+                cart[existingIndex].quantity += 1;
+            } else {
+                cart.push(item);
+            }
+            updateCartUI();
+        }
+
+        function updateQuantity(itemId, delta) {
+            const idx = cart.findIndex(i => i.id === itemId);
+            if (idx > -1) {
+                cart[idx].quantity += delta;
+                if (cart[idx].quantity <= 0) {
+                    cart.splice(idx, 1);
+                }
+            }
+            updateCartUI();
+        }
+
+        function removeFromCart(itemId) {
+            cart = cart.filter(i => i.id !== itemId);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cartBadge');
+            const list = document.getElementById('cartItemList');
+            const subtotalEl = document.getElementById('cartSubtotal');
+            const totalEl = document.getElementById('cartTotal');
+
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            if (badge) badge.innerText = totalCount;
+            if (subtotalEl) subtotalEl.innerText = formatVND(totalPrice);
+            if (totalEl) totalEl.innerText = formatVND(totalPrice);
+
+            if (list) {
+                if (cart.length === 0) {
+                    list.innerHTML = `
+                        <div class="text-center py-12 text-gray-500">
+                            <i class="fa-solid fa-bag-shopping text-4xl mb-3 text-gray-600 block"></i>
+                            Giỏ hàng của bạn đang trống
+                        </div>
+                    `;
+                    return;
+                }
+
+                list.innerHTML = cart.map(item => `
+                    <div class="flex gap-4 p-3 bg-black/40 border border-white/5 rounded-xl items-center">
+                        <img src="${item.image}" class="w-16 h-16 object-cover rounded-lg border border-white/10 shrink-0">
+                        <div class="flex-grow">
+                            <h4 class="text-xs font-bold text-white line-clamp-1">${item.name}</h4>
+                            <div class="text-[10px] text-gray-400 mt-0.5">Size: <span class="text-brand-gold font-bold">${item.size}</span></div>
+                            ${item.details ? `<div class="text-[10px] text-brand-gold">${item.details}</div>` : ''}
+                            <div class="text-xs font-bold text-brand-gold mt-1">${formatVND(item.price)}</div>
+                        </div>
+                        <div class="flex flex-col items-end gap-2">
+                            <button onclick="removeFromCart('${item.id}')" class="text-gray-500 hover:text-red-400 text-xs">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                            <div class="flex items-center gap-2 bg-brand-card px-2 py-1 rounded-lg border border-white/10 text-xs">
+                                <button onclick="updateQuantity('${item.id}', -1)" class="text-gray-400 hover:text-white">-</button>
+                                <span class="font-bold text-white min-w-[12px] text-center">${item.quantity}</span>
+                                <button onclick="updateQuantity('${item.id}', 1)" class="text-gray-400 hover:text-white">+</button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Cart Drawer Controls
+        function openCartDrawer() {
+            document.getElementById('cartDrawerBackdrop').classList.remove('opacity-0', 'pointer-events-none');
+            document.getElementById('cartDrawer').classList.remove('translate-x-full');
+        }
+
+        function closeCartDrawer() {
+            document.getElementById('cartDrawerBackdrop').classList.add('opacity-0', 'pointer-events-none');
+            document.getElementById('cartDrawer').classList.add('translate-x-full');
+        }
+
+        // Modal Controls
+        function openProductModal(productId) {
+            const p = productsData.find(item => item.id === productId);
+            if (!p) return;
+
+            const modal = document.getElementById('productModal');
+            const content = document.getElementById('productModalContent');
+
+            content.innerHTML = `
+                <button onclick="closeProductModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 z-10">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="rounded-xl overflow-hidden h-72 bg-black/40">
+                        <img src="${p.image}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="space-y-4">
+                        <span class="text-xs uppercase font-bold text-brand-gold tracking-widest">${p.category}</span>
+                        <h2 class="text-2xl font-bold text-white">${p.name}</h2>
+                        <div class="text-yellow-400 text-xs flex items-center gap-1 font-semibold">
+                            <i class="fa-solid fa-star"></i> ${p.rating} (48 đánh giá)
+                        </div>
+                        <p class="text-xs text-gray-300 leading-relaxed font-light">${p.desc}</p>
+                        <div class="text-2xl font-bold text-brand-gold">${formatVND(p.price)}</div>
+                        <div class="pt-4 flex gap-3">
+                            <button onclick="quickAddToCart('${p.id}'); closeProductModal();" class="flex-grow py-3 bg-brand-gold text-black font-bold uppercase tracking-wider text-xs rounded-xl hover:bg-yellow-500 transition-colors">
+                                Thêm Vào Giỏ Hàng
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function openCheckoutModal() {
+            if (cart.length === 0) {
+                alert('Giỏ hàng của bạn đang trống!');
+                return;
+            }
+            closeCartDrawer();
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            document.getElementById('checkoutTotal').innerText = formatVND(total);
+            document.getElementById('checkoutModal').classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function processCheckout(e) {
+            e.preventDefault();
+            alert('🎉 Đặt hàng thành công! Wearu Studio sẽ liên hệ xác nhận đơn hàng sớm nhất.');
+            cart = [];
+            updateCartUI();
+            closeCheckoutModal();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            alert('📩 Yêu cầu hỗ trợ của bạn đã được gửi. Wearu sẽ phản hồi trong 2 giờ làm việc!');
+            e.target.reset();
+        }
+
+        // Header and UI Events
+        function toggleNotifications() {
+            const menu = document.getElementById('notifMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function closeMobileMenu() {
+            document.getElementById('mobileMenu').classList.add('hidden');
+        }
     </script>
 </body>
 </html>
