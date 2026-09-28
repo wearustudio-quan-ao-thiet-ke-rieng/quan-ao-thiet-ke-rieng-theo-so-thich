@@ -19,14 +19,14 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#0f0f11',
-                            card: '#18181c',
-                            gold: '#d4af37',
-                            goldlight: '#f3e5ab',
-                            nude: '#f4efa8',
-                            cream: '#f9f8f3',
-                            gray: '#8e8e93',
-                            accent: '#c5a059'
+                            dark: '#F7F3EE',
+                            card: '#FFFDFC',
+                            gold: '#8B5E3C',
+                            goldlight: '#D8B89A',
+                            nude: '#E8D7C3',
+                            cream: '#FBF8F4',
+                            gray: '#7A665A',
+                            accent: '#A47551'
                         }
                     },
                     fontFamily: {
@@ -38,30 +38,44 @@
         }
     </script>
     <style>
+
+        /* ===== BROWN & WHITE THEME ===== */
+        body { background: #F7F3EE !important; color: #3B2A22 !important; }
+        .bg-brand-card { background-color: #FFFDFC !important; }
+        .selection\:bg-brand-gold::selection { background: #8B5E3C; }
+        input, textarea, select { color: #3B2A22; }
+        input::placeholder, textarea::placeholder { color: #A08D80; }
+        .gold-gradient-text { background: linear-gradient(135deg, #6B3F2A 0%, #8B5E3C 50%, #A47551 100%); -webkit-background-clip: text; background-clip: text; }
+        .gold-gradient-bg { background: linear-gradient(135deg, #8B5E3C 0%, #6B3F2A 100%); }
+        .gold-border { border-image: linear-gradient(to right, #8B5E3C, #D8B89A, #8B5E3C) 1; }
+        ::-webkit-scrollbar-track { background: #F7F3EE; }
+        ::-webkit-scrollbar-thumb { background: #C9B7A9; }
+        ::-webkit-scrollbar-thumb:hover { background: #8B5E3C; }
+
         /* Custom scrollbar and animations */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0f0f11;
+            background: #F7F3EE;
         }
         ::-webkit-scrollbar-thumb {
-            background: #2a2a30;
+            background: #D8CEC5;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #d4af37;
+            background: #8B5E3C;
         }
         .gold-gradient-text {
-            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+            background: linear-gradient(135deg, #D8B89A 0%, #8B5E3C 50%, #6B3F2A 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .gold-gradient-bg {
-            background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+            background: linear-gradient(135deg, #8B5E3C 0%, #6B3F2A 100%);
         }
         .gold-border {
-            border-image: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37) 1;
+            border-image: linear-gradient(to right, #8B5E3C, #D8B89A, #8B5E3C) 1;
         }
         .canvas-container {
             user-select: none;
@@ -79,28 +93,22 @@
         }
     </style>
 </head>
-<body class="bg-[#0f0f11] text-gray-200 font-sans min-h-screen flex flex-col justify-between selection:bg-brand-gold selection:text-black">
+<body class="bg-[#F7F3EE] text-[#3B2A22] font-sans min-h-screen flex flex-col justify-between selection:bg-brand-gold selection:text-black">
 
     <!-- Top Announcement Bar -->
-    <div class="bg-gradient-to-r from-amber-900 via-yellow-700 to-amber-900 text-amber-100 text-xs py-2 px-4 text-center font-medium tracking-wider uppercase flex justify-between items-center z-50 relative">
+    <div class="bg-gradient-to-r from-[#6B3F2A] via-[#8B5E3C] to-[#6B3F2A] text-[#FFF8F2] text-xs py-2 px-4 text-center font-medium tracking-wider uppercase flex justify-between items-center z-50 relative">
         <span class="hidden sm:inline">✨ Miễn phí vận chuyển cho đơn hàng từ 1.000.000đ</span>
         <span class="mx-auto sm:mx-0">🔥 Bộ Sưu Tập Mùa Thu 2026 Đã Ra Mắt - Giảm 15% Khi Tự Thiết Kế</span>
         <span class="hidden md:inline"><i class="fa-solid font-bold fa-phone mr-1"></i> Hotline: 1900 8888</span>
     </div>
 
     <!-- Navigation Header -->
-    <header class="sticky top-0 z-40 bg-[#0f0f11]/90 backdrop-blur-md border-b border-white/10 transition-all duration-300" id="mainHeader">
+    <header class="sticky top-0 z-40 bg-[#F7F3EE]/90 backdrop-blur-md border-b border-[#8B5E3C]/15 transition-all duration-300" id="mainHeader">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
-                <a href="#home" class="flex items-center gap-2 group">
-                    <div class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center bg-black group-hover:scale-105 transition-transform duration-300">
-                        <span class="font-serif font-bold text-xl text-brand-gold">W</span>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="font-serif font-bold text-2xl tracking-widest text-white group-hover:text-brand-gold transition-colors">WEARU<span class="text-brand-gold">.</span></span>
-                        <span class="text-[9px] tracking-[0.3em] text-gray-400 uppercase">Studio Clothing</span>
-                    </div>
+                <a href="#home" class="flex items-center group" aria-label="Wearu Studio">
+                    <img src="wearu-logo.png" alt="WEARU T-SHIRT & DESIGN" class="w-[150px] sm:w-[175px] h-auto object-contain group-hover:scale-105 transition-transform duration-300">
                 </a>
 
                 <!-- Desktop Navigation Menu -->
@@ -108,20 +116,20 @@
                     <a href="#home" class="nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative" data-route="home">
                         Trang Chủ
                     </a>
-                    <a href="#about" class="nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-gray-300 hover:text-brand-gold" data-route="about">
+                    <a href="#about" class="nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-[#6F5A4C] hover:text-brand-gold" data-route="about">
                         Về Thương Hiệu
                     </a>
-                    <a href="#customizer" class="nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-gray-300 hover:text-brand-gold flex items-center gap-1.5" data-route="customizer">
+                    <a href="#customizer" class="nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-[#6F5A4C] hover:text-brand-gold flex items-center gap-1.5" data-route="customizer">
                         <span class="relative flex h-2 w-2">
                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-75"></span>
                           <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-gold"></span>
                         </span>
                         Tự Thiết Kế Áo
                     </a>
-                    <a href="#collection" class="nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-gray-300 hover:text-brand-gold" data-route="collection">
+                    <a href="#collection" class="nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-[#6F5A4C] hover:text-brand-gold" data-route="collection">
                         Bộ Sưu Tập Áo
                     </a>
-                    <a href="#contact" class="nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-gray-300 hover:text-brand-gold" data-route="contact">
+                    <a href="#contact" class="nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-[#6F5A4C] hover:text-brand-gold" data-route="contact">
                         Liên Hệ
                     </a>
                 </nav>
@@ -130,28 +138,28 @@
                 <div class="flex items-center space-x-5">
                     <!-- Notifications Dropdown Trigger -->
                     <div class="relative">
-                        <button id="notifBtn" onclick="toggleNotifications()" class="p-2 text-gray-300 hover:text-brand-gold transition-colors relative" title="Thông báo">
+                        <button id="notifBtn" onclick="toggleNotifications()" class="p-2 text-[#6F5A4C] hover:text-brand-gold transition-colors relative" title="Thông báo">
                             <i class="fa-regular fa-bell text-xl"></i>
                             <span class="absolute top-1 right-1 w-2 h-2 bg-brand-gold rounded-full"></span>
                         </button>
                         <!-- Notifications Popup -->
-                        <div id="notifMenu" class="hidden absolute right-0 mt-3 w-80 bg-brand-card border border-white/10 rounded-xl shadow-2xl p-4 z-50">
-                            <h4 class="font-bold text-sm border-b border-white/10 pb-2 mb-3 text-brand-gold">Thông Báo Mới</h4>
+                        <div id="notifMenu" class="hidden absolute right-0 mt-3 w-80 bg-brand-card border border-[#8B5E3C]/15 rounded-xl shadow-2xl p-4 z-50">
+                            <h4 class="font-bold text-sm border-b border-[#8B5E3C]/15 pb-2 mb-3 text-brand-gold">Thông Báo Mới</h4>
                             <div class="space-y-3 text-xs">
                                 <div class="p-2 rounded bg-white/5 hover:bg-white/10 transition-colors cursor-pointer">
-                                    <p class="font-semibold text-white">🎉 Khuyến mãi mùa Thu 2026</p>
-                                    <p class="text-gray-400 mt-0.5">Nhập mã <span class="text-brand-gold font-mono">WEARU2026</span> giảm 10% đơn đầu tiên.</p>
+                                    <p class="font-semibold text-[#3B2A22]">🎉 Khuyến mãi mùa Thu 2026</p>
+                                    <p class="text-[#806B5D] mt-0.5">Nhập mã <span class="text-brand-gold font-mono">WEARU2026</span> giảm 10% đơn đầu tiên.</p>
                                 </div>
                                 <div class="p-2 rounded bg-white/5 hover:bg-white/10 transition-colors cursor-pointer">
-                                    <p class="font-semibold text-white">👕 Bộ sưu tập Polo mới</p>
-                                    <p class="text-gray-400 mt-0.5">Dòng sản phẩm vải Bamboo cao cấp vừa cập bến.</p>
+                                    <p class="font-semibold text-[#3B2A22]">👕 Bộ sưu tập Polo mới</p>
+                                    <p class="text-[#806B5D] mt-0.5">Dòng sản phẩm vải Bamboo cao cấp vừa cập bến.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Cart Trigger -->
-                    <button onclick="openCartDrawer()" class="p-2 text-gray-300 hover:text-brand-gold transition-colors relative flex items-center gap-2 group">
+                    <button onclick="openCartDrawer()" class="p-2 text-[#6F5A4C] hover:text-brand-gold transition-colors relative flex items-center gap-2 group">
                         <div class="relative">
                             <i class="fa-solid fa-bag-shopping text-xl"></i>
                             <span id="cartBadge" class="absolute -top-2 -right-2 bg-brand-gold text-black font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center">0</span>
@@ -160,7 +168,7 @@
                     </button>
 
                     <!-- Mobile Hamburger Toggle -->
-                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-gray-300 hover:text-white focus:outline-none">
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-[#6F5A4C] hover:text-[#3B2A22] focus:outline-none">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -168,12 +176,12 @@
         </div>
 
         <!-- Mobile Navigation Menu Dropdown -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-brand-card border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
-            <a href="#home" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-gray-300 hover:text-brand-gold border-b border-white/5">TRANG CHỦ</a>
-            <a href="#about" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-gray-300 hover:text-brand-gold border-b border-white/5">VỀ THƯƠNG HIỆU</a>
-            <a href="#customizer" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-brand-gold font-bold border-b border-white/5">✨ TỰ THIẾT KẾ ÁO</a>
-            <a href="#collection" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-gray-300 hover:text-brand-gold border-b border-white/5">BỘ SƯU TẬP ÁO</a>
-            <a href="#contact" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-gray-300 hover:text-brand-gold">LIÊN HỆ</a>
+        <div id="mobileMenu" class="hidden lg:hidden bg-brand-card border-b border-[#8B5E3C]/15 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-[#6F5A4C] hover:text-brand-gold border-b border-[#8B5E3C]/10">TRANG CHỦ</a>
+            <a href="#about" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-[#6F5A4C] hover:text-brand-gold border-b border-[#8B5E3C]/10">VỀ THƯƠNG HIỆU</a>
+            <a href="#customizer" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-brand-gold font-bold border-b border-[#8B5E3C]/10">✨ TỰ THIẾT KẾ ÁO</a>
+            <a href="#collection" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-[#6F5A4C] hover:text-brand-gold border-b border-[#8B5E3C]/10">BỘ SƯU TẬP ÁO</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="block py-2 text-base font-medium text-[#6F5A4C] hover:text-brand-gold">LIÊN HỆ</a>
         </div>
     </header>
 
@@ -183,25 +191,25 @@
         <!-- 1. TRANG CHỦ (#home) -->
         <section id="view-home" class="page-view">
             <!-- Hero Banner -->
-            <div class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-black/60">
+            <div class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#3B2A22]/40">
                 <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80');"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-[#0f0f11] via-[#0f0f11]/60 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#F7F3EE] via-[#F7F3EE]/60 to-transparent"></div>
                 
                 <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
                     <span class="inline-block px-4 py-1.5 bg-brand-gold/20 border border-brand-gold/40 rounded-full text-brand-gold text-xs tracking-widest uppercase mb-6 font-semibold">
                         Luxury Studio Custom Apparel
                     </span>
-                    <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight leading-tight mb-6">
+                    <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold text-[#3B2A22] tracking-tight leading-tight mb-6">
                         Định Hình Phong Cách <br/><span class="gold-gradient-text">Tự Do Sáng Tạo</span>
                     </h1>
-                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                    <p class="text-[#6F5A4C] text-base sm:text-lg max-w-2xl mx-auto mb-10 font-light leading-relaxed">
                         Khám phá bộ sưu tập thời trang tối giản cao cấp hoặc tự tay kiến tạo chiếc áo độc bản mang đậm dấu ấn cá nhân của riêng bạn tại Wearu Studio.
                     </p>
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a href="#customizer" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-gold to-yellow-600 text-black font-bold uppercase tracking-wider text-sm rounded-full hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] transition-all duration-300 transform hover:-translate-y-1">
+                        <a href="#customizer" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-gold to-[#6B3F2A] text-black font-bold uppercase tracking-wider text-sm rounded-full hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] transition-all duration-300 transform hover:-translate-y-1">
                             <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Trải Nghiệm Thiết Kế 3D
                         </a>
-                        <a href="#collection" class="w-full sm:w-auto px-8 py-4 border border-white/20 hover:border-brand-gold text-white hover:text-brand-gold font-semibold uppercase tracking-wider text-sm rounded-full transition-all duration-300 bg-white/5 backdrop-blur-sm">
+                        <a href="#collection" class="w-full sm:w-auto px-8 py-4 border border-[#8B5E3C]/25 hover:border-brand-gold text-[#3B2A22] hover:text-brand-gold font-semibold uppercase tracking-wider text-sm rounded-full transition-all duration-300 bg-white/5 backdrop-blur-sm">
                             Xem Bộ Sưu Tập
                         </a>
                     </div>
@@ -211,49 +219,49 @@
             <!-- Categories Grid -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div class="text-center mb-12">
-                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-white">Danh Mục Nổi Bật</h2>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#3B2A22]">Danh Mục Nổi Bật</h2>
                     <div class="w-16 h-1 bg-brand-gold mx-auto mt-4 rounded-full"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="group relative rounded-2xl overflow-hidden bg-brand-card border border-white/10 h-96 cursor-pointer" onclick="navigateTo('collection', 'tshirt')">
-                        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80" alt="T-Shirt" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80">
+                    <div class="group relative rounded-2xl overflow-hidden bg-brand-card border border-[#8B5E3C]/15 h-96 cursor-pointer" onclick="navigateTo('collection', 'tshirt')">
+                        <img src="áo tay dài.png" alt="Áo Tay Dài" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 right-6">
-                            <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Premium Cotton</span>
-                            <h3 class="text-2xl font-bold text-white mt-1">Áo Phông / T-Shirt</h3>
-                            <p class="text-gray-400 text-sm mt-2">Form dáng Oversized hiện đại, chất vải 100% Cotton 250GSM.</p>
+                            <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Premium Longsleeve</span>
+                            <h3 class="text-2xl font-bold text-[#3B2A22] mt-1">Áo Tay Dài / Longsleeve</h3>
+                            <p class="text-[#806B5D] text-sm mt-2">Form dáng hiện đại, chất vải Cotton Stay True mềm mịn cao cấp.</p>
                         </div>
                     </div>
-                    <div class="group relative rounded-2xl overflow-hidden bg-brand-card border border-white/10 h-96 cursor-pointer" onclick="navigateTo('collection', 'hoodie')">
+                    <div class="group relative rounded-2xl overflow-hidden bg-brand-card border border-[#8B5E3C]/15 h-96 cursor-pointer" onclick="navigateTo('collection', 'hoodie')">
                         <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80" alt="Hoodie" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 right-6">
                             <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Streetwear Essential</span>
-                            <h3 class="text-2xl font-bold text-white mt-1">Hoodie & Sweatshirt</h3>
-                            <p class="text-gray-400 text-sm mt-2">Đứng form, nỉ chân cua dày dặn giữ ấm chuẩn phong cách.</p>
+                            <h3 class="text-2xl font-bold text-[#3B2A22] mt-1">Hoodie & Sweatshirt</h3>
+                            <p class="text-[#806B5D] text-sm mt-2">Đứng form, nỉ chân cua dày dặn giữ ấm chuẩn phong cách.</p>
                         </div>
                     </div>
-                    <div class="group relative rounded-2xl overflow-hidden bg-brand-card border border-white/10 h-96 cursor-pointer" onclick="navigateTo('collection', 'polo')">
+                    <div class="group relative rounded-2xl overflow-hidden bg-brand-card border border-[#8B5E3C]/15 h-96 cursor-pointer" onclick="navigateTo('collection', 'polo')">
                         <img src="https://images.unsplash.com/photo-1625910513413-730303e913a8?auto=format&fit=crop&w=800&q=80" alt="Polo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 right-6">
                             <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Smart Casual</span>
-                            <h3 class="text-2xl font-bold text-white mt-1">Áo Polo Cao Cấp</h3>
-                            <p class="text-gray-400 text-sm mt-2">Sợi tre Bamboo thoáng mát, tinh tế lịch sự trong từng chi tiết.</p>
+                            <h3 class="text-2xl font-bold text-[#3B2A22] mt-1">Áo Polo Cao Cấp</h3>
+                            <p class="text-[#806B5D] text-sm mt-2">Sợi tre Bamboo thoáng mát, tinh tế lịch sự trong từng chi tiết.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Best Sellers Preview -->
-            <div class="bg-brand-card/50 py-20 border-y border-white/5">
+            <div class="bg-brand-card/50 py-20 border-y border-[#8B5E3C]/10">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                         <div>
                             <span class="text-brand-gold text-xs tracking-widest uppercase font-semibold">Sản Phẩm Được Yêu Thích</span>
-                            <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mt-1">Best Sellers Studio</h2>
+                            <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#3B2A22] mt-1">Best Sellers Studio</h2>
                         </div>
-                        <a href="#collection" class="inline-flex items-center gap-2 text-brand-gold hover:text-white transition-colors text-sm font-semibold uppercase tracking-wider mt-4 md:mt-0">
+                        <a href="#collection" class="inline-flex items-center gap-2 text-brand-gold hover:text-[#3B2A22] transition-colors text-sm font-semibold uppercase tracking-wider mt-4 md:mt-0">
                             Xem tất cả sản phẩm <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -266,33 +274,33 @@
             <!-- Value Commitments -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                    <div class="p-6 rounded-2xl bg-brand-card border border-white/5">
+                    <div class="p-6 rounded-2xl bg-brand-card border border-[#8B5E3C]/10">
                         <div class="w-14 h-14 bg-brand-gold/10 text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                             <i class="fa-solid fa-shirt"></i>
                         </div>
-                        <h4 class="font-bold text-white mb-2">Vải Cotton 100% Premium</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">Chất liệu hữu cơ thoáng mát, co giãn tốt và thân thiện với làn da.</p>
+                        <h4 class="font-bold text-[#3B2A22] mb-2">Vải Cotton 100% Premium</h4>
+                        <p class="text-xs text-[#806B5D] leading-relaxed">Chất liệu hữu cơ thoáng mát, co giãn tốt và thân thiện với làn da.</p>
                     </div>
-                    <div class="p-6 rounded-2xl bg-brand-card border border-white/5">
+                    <div class="p-6 rounded-2xl bg-brand-card border border-[#8B5E3C]/10">
                         <div class="w-14 h-14 bg-brand-gold/10 text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                             <i class="fa-solid fa-print"></i>
                         </div>
-                        <h4 class="font-bold text-white mb-2">Công Nghệ In DTG Nhật Bản</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">Màu in sắc nét, bền đẹp qua hàng trăm lần giặt, không bong tróc.</p>
+                        <h4 class="font-bold text-[#3B2A22] mb-2">Công Nghệ In DTG Nhật Bản</h4>
+                        <p class="text-xs text-[#806B5D] leading-relaxed">Màu in sắc nét, bền đẹp qua hàng trăm lần giặt, không bong tróc.</p>
                     </div>
-                    <div class="p-6 rounded-2xl bg-brand-card border border-white/5">
+                    <div class="p-6 rounded-2xl bg-brand-card border border-[#8B5E3C]/10">
                         <div class="w-14 h-14 bg-brand-gold/10 text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                             <i class="fa-solid fa-truck-fast"></i>
                         </div>
-                        <h4 class="font-bold text-white mb-2">Giao Hàng Tốc Độ</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">In và hoàn thiện áo tự thiết kế trong 24h - 48h làm việc.</p>
+                        <h4 class="font-bold text-[#3B2A22] mb-2">Giao Hàng Tốc Độ</h4>
+                        <p class="text-xs text-[#806B5D] leading-relaxed">In và hoàn thiện áo tự thiết kế trong 24h - 48h làm việc.</p>
                     </div>
-                    <div class="p-6 rounded-2xl bg-brand-card border border-white/5">
+                    <div class="p-6 rounded-2xl bg-brand-card border border-[#8B5E3C]/10">
                         <div class="w-14 h-14 bg-brand-gold/10 text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                             <i class="fa-solid fa-rotate-left"></i>
                         </div>
-                        <h4 class="font-bold text-white mb-2">Đổi Trả Trong 15 Ngày</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">Hỗ trợ đổi size hoặc lỗi từ nhà sản xuất cực kỳ đơn giản.</p>
+                        <h4 class="font-bold text-[#3B2A22] mb-2">Đổi Trả Trong 15 Ngày</h4>
+                        <p class="text-xs text-[#806B5D] leading-relaxed">Hỗ trợ đổi size hoặc lỗi từ nhà sản xuất cực kỳ đơn giản.</p>
                     </div>
                 </div>
             </div>
@@ -301,11 +309,11 @@
         <!-- 2. TRANG VỀ THƯƠNG HIỆU (#about) -->
         <section id="view-about" class="page-view">
             <!-- Header -->
-            <div class="bg-brand-card py-16 border-b border-white/10">
+            <div class="bg-brand-card py-16 border-b border-[#8B5E3C]/15">
                 <div class="max-w-4xl mx-auto text-center px-4">
                     <span class="text-brand-gold text-xs uppercase tracking-[0.3em] font-semibold">Story of Wearu Studio</span>
-                    <h1 class="font-serif text-4xl sm:text-5xl font-bold text-white mt-2">Hành Trình Kiến Tạo Bản Sắc</h1>
-                    <p class="text-gray-400 text-sm sm:text-base mt-4 max-w-2xl mx-auto">
+                    <h1 class="font-serif text-4xl sm:text-5xl font-bold text-[#3B2A22] mt-2">Hành Trình Kiến Tạo Bản Sắc</h1>
+                    <p class="text-[#806B5D] text-sm sm:text-base mt-4 max-w-2xl mx-auto">
                         Chúng tôi tin rằng thời trang không chỉ là trang phục bạn mặc lên người, mà là cách bạn đối thoại với thế giới xung quanh mà không cần cất lời.
                     </p>
                 </div>
@@ -317,31 +325,31 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div>
                         <span class="text-brand-gold text-xs font-semibold uppercase tracking-widest">Triết Lý Thiết Kế</span>
-                        <h2 class="font-serif text-3xl font-bold text-white mt-2 mb-6">Tối Giản Trong Hình Thức - Tối Đa Trong Bản Sắc</h2>
-                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        <h2 class="font-serif text-3xl font-bold text-[#3B2A22] mt-2 mb-6">Tối Giản Trong Hình Thức - Tối Đa Trong Bản Sắc</h2>
+                        <p class="text-[#6F5A4C] text-sm leading-relaxed mb-4">
                             Được thành lập vào năm 2024 tại TP. Hồ Chí Minh, **Wearu.studio** ra đời với sứ mệnh xóa bỏ rào cản giữa ý tưởng sáng tạo cá nhân và sản phẩm thời trang hoàn thiện thực tế.
                         </p>
-                        <p class="text-gray-400 text-sm leading-relaxed">
+                        <p class="text-[#806B5D] text-sm leading-relaxed">
                             Mỗi sản phẩm Wearu tạo ra đều bắt đầu từ chất liệu vải chọn lọc khắt khe, đường kim mũi chỉ chuẩn mực và công nghệ in hiện đại nhất, cho phép bạn biến những dòng chữ, nét vẽ hay ý niệm cá nhân thành hiện thực.
                         </p>
                     </div>
-                    <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                    <div class="relative rounded-2xl overflow-hidden border border-[#8B5E3C]/15 shadow-2xl">
                         <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80" alt="Studio Wearu" class="w-full h-[400px] object-cover">
                     </div>
                 </div>
 
                 <!-- Section 2: Quy trình bền vững -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 md:order-1 relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                    <div class="order-2 md:order-1 relative rounded-2xl overflow-hidden border border-[#8B5E3C]/15 shadow-2xl">
                         <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80" alt="Sản xuất bền vững" class="w-full h-[400px] object-cover">
                     </div>
                     <div class="order-1 md:order-2">
                         <span class="text-brand-gold text-xs font-semibold uppercase tracking-widest">Cam Kết Bền Vùng</span>
-                        <h2 class="font-serif text-3xl font-bold text-white mt-2 mb-6">In Theo Yêu Cầu - Giảm Mức Thải Nhựa & Vải Thừa</h2>
-                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        <h2 class="font-serif text-3xl font-bold text-[#3B2A22] mt-2 mb-6">In Theo Yêu Cầu - Giảm Mức Thải Nhựa & Vải Thừa</h2>
+                        <p class="text-[#6F5A4C] text-sm leading-relaxed mb-4">
                             Ngành thời trang nhanh tạo ra lượng rác thải khổng lồ mỗi năm. Tại Wearu.studio, chúng tôi tiên phong áp dụng mô hình **On-Demand Production (Sản xuất theo đơn)**.
                         </p>
-                        <ul class="space-y-3 text-sm text-gray-400">
+                        <ul class="space-y-3 text-sm text-[#806B5D]">
                             <li class="flex items-center gap-3">
                                 <i class="fa-solid fa-check text-brand-gold"></i>
                                 100% Mực in gốc nước sinh học an toàn cho da & môi trường.
@@ -359,23 +367,23 @@
                 </div>
 
                 <!-- Founder / Team Section -->
-                <div class="bg-brand-card p-10 rounded-3xl border border-white/10 text-center">
-                    <h2 class="font-serif text-3xl font-bold text-white mb-2">Đội Ngũ Sáng Tạo</h2>
-                    <p class="text-gray-400 text-sm max-w-xl mx-auto mb-10">Những con người nhiệt huyết đứng sau từng đường may và trải nghiệm của bạn.</p>
+                <div class="bg-brand-card p-10 rounded-3xl border border-[#8B5E3C]/15 text-center">
+                    <h2 class="font-serif text-3xl font-bold text-[#3B2A22] mb-2">Đội Ngũ Sáng Tạo</h2>
+                    <p class="text-[#806B5D] text-sm max-w-xl mx-auto mb-10">Những con người nhiệt huyết đứng sau từng đường may và trải nghiệm của bạn.</p>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
                         <div class="p-4">
                             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-brand-gold">
-                            <h4 class="font-bold text-white">Minh Anh</h4>
+                            <h4 class="font-bold text-[#3B2A22]">Minh Anh</h4>
                             <p class="text-xs text-brand-gold">Creative Director</p>
                         </div>
                         <div class="p-4">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-brand-gold">
-                            <h4 class="font-bold text-white">Hoàng Nam</h4>
+                            <h4 class="font-bold text-[#3B2A22]">Hoàng Nam</h4>
                             <p class="text-xs text-brand-gold">Lead Designer & Tailor</p>
                         </div>
                         <div class="p-4">
                             <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-brand-gold">
-                            <h4 class="font-bold text-white">Linh Trần</h4>
+                            <h4 class="font-bold text-[#3B2A22]">Linh Trần</h4>
                             <p class="text-xs text-brand-gold">Product Experience Lead</p>
                         </div>
                     </div>
@@ -387,15 +395,15 @@
         <section id="view-customizer" class="page-view">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <!-- Title Header -->
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-4 border-b border-white/10">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-4 border-b border-[#8B5E3C]/15">
                     <div>
-                        <h1 class="font-serif text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+                        <h1 class="font-serif text-2xl md:text-3xl font-bold text-[#3B2A22] flex items-center gap-3">
                             <i class="fa-solid fa-palette text-brand-gold"></i> Wearu Custom Studio 3D
                         </h1>
-                        <p class="text-xs md:text-sm text-gray-400 mt-1">Tự tay thiết kế chiếc áo độc bản. Xem trước góc nhìn thực tế.</p>
+                        <p class="text-xs md:text-sm text-[#806B5D] mt-1">Tự tay thiết kế chiếc áo độc bản. Xem trước góc nhìn thực tế.</p>
                     </div>
                     <div class="mt-4 md:mt-0 flex items-center gap-3">
-                        <button onclick="resetCustomizer()" class="px-4 py-2 text-xs bg-white/5 hover:bg-white/10 text-gray-300 rounded-lg transition-colors flex items-center gap-1.5">
+                        <button onclick="resetCustomizer()" class="px-4 py-2 text-xs bg-white/5 hover:bg-white/10 text-[#6F5A4C] rounded-lg transition-colors flex items-center gap-1.5">
                             <i class="fa-solid fa-rotate-right"></i> Làm Mới
                         </button>
                     </div>
@@ -405,26 +413,26 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     
                     <!-- Left: Preview Canvas Area (7 cols) -->
-                    <div class="lg:col-span-7 bg-brand-card border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-between min-h-[500px] relative overflow-hidden">
+                    <div class="lg:col-span-7 bg-brand-card border border-[#8B5E3C]/15 rounded-2xl p-6 flex flex-col items-center justify-between min-h-[500px] relative overflow-hidden">
                         
                         <!-- Toggle View Side (Front/Back) -->
-                        <div class="absolute top-4 left-4 z-20 flex bg-black/60 backdrop-blur-md p-1 rounded-xl border border-white/10">
+                        <div class="absolute top-4 left-4 z-20 flex bg-[#3B2A22]/40 backdrop-blur-md p-1 rounded-xl border border-[#8B5E3C]/15">
                             <button id="viewFrontBtn" onclick="switchShirtView('front')" class="px-4 py-1.5 text-xs font-semibold rounded-lg bg-brand-gold text-black transition-all">
                                 Mặt Trước
                             </button>
-                            <button id="viewBackBtn" onclick="switchShirtView('back')" class="px-4 py-1.5 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all">
+                            <button id="viewBackBtn" onclick="switchShirtView('back')" class="px-4 py-1.5 text-xs font-semibold rounded-lg text-[#6F5A4C] hover:text-[#3B2A22] transition-all">
                                 Mặt Sau
                             </button>
                         </div>
 
                         <!-- Canvas Workspace Container -->
-                        <div class="relative w-full max-w-[380px] aspect-[4/5] my-auto flex items-center justify-center border border-dashed border-white/10 rounded-xl bg-black/20 p-2">
+                        <div class="relative w-full max-w-[380px] aspect-[4/5] my-auto flex items-center justify-center border border-dashed border-[#8B5E3C]/15 rounded-xl bg-[#3B2A22]/5 p-2">
                             <!-- SVG Shirt Base Layer -->
                             <svg id="shirtSvg" class="w-full h-full drop-shadow-2xl transition-all duration-300" viewBox="0 0 500 600" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <!-- Shirt Outline Path -->
-                                <path id="shirtBody" d="M160 80 C 190 110, 310 110, 340 80 L 440 140 L 390 230 L 350 190 L 350 510 C 350 520, 340 530, 330 530 L 170 530 C 160 530, 150 520, 150 510 L 150 190 L 110 230 L 60 140 Z" fill="#ffffff" stroke="#222" stroke-width="2"/>
+                                <path id="shirtBody" d="M160 80 C 190 110, 310 110, 340 80 L 440 140 L 390 230 L 350 190 L 350 510 C 350 520, 340 530, 330 530 L 170 530 C 160 530, 150 520, 150 510 L 150 190 L 110 230 L 60 140 Z" fill="#ffffff" stroke="#3B2A22" stroke-width="2"/>
                                 <!-- Collar -->
-                                <path d="M160 80 C 200 120, 300 120, 340 80 C 310 100, 190 100, 160 80 Z" fill="#111" opacity="0.15"/>
+                                <path d="M160 80 C 200 120, 300 120, 340 80 C 310 100, 190 100, 160 80 Z" fill="#3B2A22" opacity="0.15"/>
                                 <!-- Sleeve Lines -->
                                 <line x1="110" y1="230" x2="150" y2="190" stroke="#000" stroke-opacity="0.2" stroke-width="2"/>
                                 <line x1="390" y1="230" x2="350" y2="190" stroke="#000" stroke-opacity="0.2" stroke-width="2"/>
@@ -451,7 +459,7 @@
                             </div>
                         </div>
 
-                        <div class="text-center text-xs text-gray-500">
+                        <div class="text-center text-xs text-[#927C6D]">
                             💡 Gợi ý: Bạn có thể nhập chữ và tải logo riêng để thiết kế mẫu áo cá nhân hóa.
                         </div>
                     </div>
@@ -460,8 +468,8 @@
                     <div class="lg:col-span-5 space-y-6">
                         
                         <!-- 1. Color Selector -->
-                        <div class="bg-brand-card border border-white/10 rounded-2xl p-5">
-                            <h3 class="text-sm font-bold text-white mb-3 uppercase tracking-wider flex items-center gap-2">
+                        <div class="bg-brand-card border border-[#8B5E3C]/15 rounded-2xl p-5">
+                            <h3 class="text-sm font-bold text-[#3B2A22] mb-3 uppercase tracking-wider flex items-center gap-2">
                                 <span class="w-2 h-2 bg-brand-gold rounded-full"></span> 1. Chọn Màu Áo
                             </h3>
                             <div class="flex items-center gap-3" id="colorPickerList">
@@ -475,62 +483,62 @@
                         </div>
 
                         <!-- 2. Text Customizer -->
-                        <div class="bg-brand-card border border-white/10 rounded-2xl p-5 space-y-4">
-                            <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                        <div class="bg-brand-card border border-[#8B5E3C]/15 rounded-2xl p-5 space-y-4">
+                            <h3 class="text-sm font-bold text-[#3B2A22] uppercase tracking-wider flex items-center gap-2">
                                 <span class="w-2 h-2 bg-brand-gold rounded-full"></span> 2. Thêm Chữ Custom
                             </h3>
                             <div>
-                                <label class="text-xs text-gray-400 block mb-1">Nội dung chữ:</label>
-                                <input type="text" id="customTextInput" oninput="updateCustomText()" placeholder="Nhập chữ bạn muốn in..." class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold">
+                                <label class="text-xs text-[#806B5D] block mb-1">Nội dung chữ:</label>
+                                <input type="text" id="customTextInput" oninput="updateCustomText()" placeholder="Nhập chữ bạn muốn in..." class="w-full bg-[#3B2A22]/8 border border-[#8B5E3C]/15 rounded-xl px-4 py-2.5 text-sm text-[#3B2A22] focus:outline-none focus:border-brand-gold">
                             </div>
                             <div class="grid grid-cols-2 gap-3">
                                 <div>
-                                    <label class="text-xs text-gray-400 block mb-1">Phông chữ:</label>
-                                    <select id="fontSelect" onchange="updateCustomText()" class="w-full bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-gold">
+                                    <label class="text-xs text-[#806B5D] block mb-1">Phông chữ:</label>
+                                    <select id="fontSelect" onchange="updateCustomText()" class="w-full bg-[#3B2A22]/8 border border-[#8B5E3C]/15 rounded-xl px-3 py-2 text-xs text-[#3B2A22] focus:outline-none focus:border-brand-gold">
                                         <option value="Plus Jakarta Sans">Hiện Đại (Sans)</option>
                                         <option value="Playfair Display">Cổ Điển (Serif)</option>
                                         <option value="Courier New">Monospace (Gõ Máy)</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <label class="text-xs text-gray-400 block mb-1">Màu chữ:</label>
-                                    <input type="color" id="textColorInput" onchange="updateCustomText()" value="#000000" class="w-full h-9 rounded-xl bg-black/40 border border-white/10 cursor-pointer p-1">
+                                    <label class="text-xs text-[#806B5D] block mb-1">Màu chữ:</label>
+                                    <input type="color" id="textColorInput" onchange="updateCustomText()" value="#000000" class="w-full h-9 rounded-xl bg-[#3B2A22]/8 border border-[#8B5E3C]/15 cursor-pointer p-1">
                                 </div>
                             </div>
                         </div>
 
                         <!-- 3. Upload Artwork / Logo -->
-                        <div class="bg-brand-card border border-white/10 rounded-2xl p-5">
-                            <h3 class="text-sm font-bold text-white mb-3 uppercase tracking-wider flex items-center gap-2">
+                        <div class="bg-brand-card border border-[#8B5E3C]/15 rounded-2xl p-5">
+                            <h3 class="text-sm font-bold text-[#3B2A22] mb-3 uppercase tracking-wider flex items-center gap-2">
                                 <span class="w-2 h-2 bg-brand-gold rounded-full"></span> 3. Tải Logo / Art In
                             </h3>
-                            <label class="flex flex-col items-center justify-center border-2 border-dashed border-white/20 hover:border-brand-gold rounded-xl p-4 cursor-pointer transition-colors bg-black/20">
+                            <label class="flex flex-col items-center justify-center border-2 border-dashed border-[#8B5E3C]/25 hover:border-brand-gold rounded-xl p-4 cursor-pointer transition-colors bg-[#3B2A22]/5">
                                 <i class="fa-solid fa-cloud-arrow-up text-2xl text-brand-gold mb-1"></i>
-                                <span class="text-xs text-gray-300 font-medium">Tải hình ảnh từ máy tính</span>
-                                <span class="text-[10px] text-gray-500 mt-0.5">Định dạng PNG, JPG (Tối đa 5MB)</span>
+                                <span class="text-xs text-[#6F5A4C] font-medium">Tải hình ảnh từ máy tính</span>
+                                <span class="text-[10px] text-[#927C6D] mt-0.5">Định dạng PNG, JPG (Tối đa 5MB)</span>
                                 <input type="file" id="imageUploader" accept="image/*" onchange="handleImageUpload(event)" class="hidden">
                             </label>
                         </div>
 
                         <!-- 4. Size & Add to Cart -->
-                        <div class="bg-brand-card border border-white/10 rounded-2xl p-5 space-y-4">
+                        <div class="bg-brand-card border border-[#8B5E3C]/15 rounded-2xl p-5 space-y-4">
                             <div>
-                                <label class="text-xs text-gray-400 block mb-2 font-bold uppercase tracking-wider">Kích Thước (Size):</label>
+                                <label class="text-xs text-[#806B5D] block mb-2 font-bold uppercase tracking-wider">Kích Thước (Size):</label>
                                 <div class="grid grid-cols-5 gap-2" id="customSizePicker">
-                                    <button onclick="selectCustomSize('S')" class="size-btn py-2 text-xs font-bold border border-white/20 rounded-xl text-gray-300 hover:border-brand-gold">S</button>
+                                    <button onclick="selectCustomSize('S')" class="size-btn py-2 text-xs font-bold border border-[#8B5E3C]/25 rounded-xl text-[#6F5A4C] hover:border-brand-gold">S</button>
                                     <button onclick="selectCustomSize('M')" class="size-btn py-2 text-xs font-bold border border-brand-gold bg-brand-gold/10 text-brand-gold rounded-xl">M</button>
-                                    <button onclick="selectCustomSize('L')" class="size-btn py-2 text-xs font-bold border border-white/20 rounded-xl text-gray-300 hover:border-brand-gold">L</button>
-                                    <button onclick="selectCustomSize('XL')" class="size-btn py-2 text-xs font-bold border border-white/20 rounded-xl text-gray-300 hover:border-brand-gold">XL</button>
-                                    <button onclick="selectCustomSize('XXL')" class="size-btn py-2 text-xs font-bold border border-white/20 rounded-xl text-gray-300 hover:border-brand-gold">XXL</button>
+                                    <button onclick="selectCustomSize('L')" class="size-btn py-2 text-xs font-bold border border-[#8B5E3C]/25 rounded-xl text-[#6F5A4C] hover:border-brand-gold">L</button>
+                                    <button onclick="selectCustomSize('XL')" class="size-btn py-2 text-xs font-bold border border-[#8B5E3C]/25 rounded-xl text-[#6F5A4C] hover:border-brand-gold">XL</button>
+                                    <button onclick="selectCustomSize('XXL')" class="size-btn py-2 text-xs font-bold border border-[#8B5E3C]/25 rounded-xl text-[#6F5A4C] hover:border-brand-gold">XXL</button>
                                 </div>
                             </div>
 
-                            <div class="pt-2 border-t border-white/10 flex items-center justify-between">
+                            <div class="pt-2 border-t border-[#8B5E3C]/15 flex items-center justify-between">
                                 <div>
-                                    <span class="text-xs text-gray-400 block">Giá áo tự thiết kế:</span>
+                                    <span class="text-xs text-[#806B5D] block">Giá áo tự thiết kế:</span>
                                     <span class="text-2xl font-bold text-brand-gold">390.000đ</span>
                                 </div>
-                                <button onclick="addCustomShirtToCart()" class="px-6 py-3 bg-gradient-to-r from-brand-gold to-yellow-600 text-black font-bold text-sm uppercase tracking-wider rounded-xl shadow-lg hover:shadow-brand-gold/20 transition-all flex items-center gap-2">
+                                <button onclick="addCustomShirtToCart()" class="px-6 py-3 bg-gradient-to-r from-brand-gold to-[#6B3F2A] text-black font-bold text-sm uppercase tracking-wider rounded-xl shadow-lg hover:shadow-brand-gold/20 transition-all flex items-center gap-2">
                                     <i class="fa-solid fa-cart-plus"></i> Thêm Vào Giỏ
                                 </button>
                             </div>
@@ -544,10 +552,10 @@
         <!-- 4. TRANG BỘ SƯU TẬP ÁO (#collection) -->
         <section id="view-collection" class="page-view">
             <!-- Header -->
-            <div class="bg-brand-card py-12 border-b border-white/10">
+            <div class="bg-brand-card py-12 border-b border-[#8B5E3C]/15">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <span class="text-brand-gold text-xs uppercase tracking-[0.3em] font-semibold">Wearu Studio Catalog</span>
-                    <h1 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">Bộ Sưu Tập Áo Cao Cấp</h1>
+                    <h1 class="font-serif text-3xl sm:text-4xl font-bold text-[#3B2A22] mt-1">Bộ Sưu Tập Áo Cao Cấp</h1>
                 </div>
             </div>
 
@@ -557,22 +565,22 @@
                     <!-- Sidebar Filters -->
                     <aside class="w-full lg:w-64 space-y-6 shrink-0">
                         <!-- Category Filter -->
-                        <div class="bg-brand-card p-5 rounded-2xl border border-white/10">
-                            <h3 class="font-bold text-sm text-white mb-4 uppercase tracking-wider border-b border-white/10 pb-2">Danh Mục</h3>
+                        <div class="bg-brand-card p-5 rounded-2xl border border-[#8B5E3C]/15">
+                            <h3 class="font-bold text-sm text-[#3B2A22] mb-4 uppercase tracking-wider border-b border-[#8B5E3C]/15 pb-2">Danh Mục</h3>
                             <div class="space-y-2 text-sm">
-                                <label class="flex items-center gap-3 text-gray-300 hover:text-brand-gold cursor-pointer">
+                                <label class="flex items-center gap-3 text-[#6F5A4C] hover:text-brand-gold cursor-pointer">
                                     <input type="radio" name="catFilter" value="all" checked onchange="filterProducts()" class="accent-brand-gold">
                                     <span>Tất Cả Sản Phẩm</span>
                                 </label>
-                                <label class="flex items-center gap-3 text-gray-300 hover:text-brand-gold cursor-pointer">
+                                <label class="flex items-center gap-3 text-[#6F5A4C] hover:text-brand-gold cursor-pointer">
                                     <input type="radio" name="catFilter" value="tshirt" onchange="filterProducts()" class="accent-brand-gold">
-                                    <span>Áo Phông (T-Shirt)</span>
+                                    <span>Áo Tay Dài (Longsleeve)</span>
                                 </label>
-                                <label class="flex items-center gap-3 text-gray-300 hover:text-brand-gold cursor-pointer">
+                                <label class="flex items-center gap-3 text-[#6F5A4C] hover:text-brand-gold cursor-pointer">
                                     <input type="radio" name="catFilter" value="hoodie" onchange="filterProducts()" class="accent-brand-gold">
                                     <span>Áo Hoodie & Nỉ</span>
                                 </label>
-                                <label class="flex items-center gap-3 text-gray-300 hover:text-brand-gold cursor-pointer">
+                                <label class="flex items-center gap-3 text-[#6F5A4C] hover:text-brand-gold cursor-pointer">
                                     <input type="radio" name="catFilter" value="polo" onchange="filterProducts()" class="accent-brand-gold">
                                     <span>Áo Polo</span>
                                 </label>
@@ -580,10 +588,10 @@
                         </div>
 
                         <!-- Price Range Filter -->
-                        <div class="bg-brand-card p-5 rounded-2xl border border-white/10">
-                            <h3 class="font-bold text-sm text-white mb-4 uppercase tracking-wider border-b border-white/10 pb-2">Khoảng Giá</h3>
+                        <div class="bg-brand-card p-5 rounded-2xl border border-[#8B5E3C]/15">
+                            <h3 class="font-bold text-sm text-[#3B2A22] mb-4 uppercase tracking-wider border-b border-[#8B5E3C]/15 pb-2">Khoảng Giá</h3>
                             <input type="range" id="priceRange" min="200000" max="800000" step="50000" value="800000" oninput="updatePriceFilter(this.value)" class="w-full accent-brand-gold">
-                            <div class="flex justify-between text-xs text-gray-400 mt-2">
+                            <div class="flex justify-between text-xs text-[#806B5D] mt-2">
                                 <span>200.000đ</span>
                                 <span id="priceValue" class="text-brand-gold font-bold">Dưới 800.000đ</span>
                             </div>
@@ -593,11 +601,11 @@
                     <!-- Product Grid Area -->
                     <main class="flex-grow">
                         <!-- Sorting Header -->
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 bg-brand-card p-4 rounded-xl border border-white/10">
-                            <span class="text-xs text-gray-400" id="productCount">Hiển thị 8 sản phẩm</span>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 bg-brand-card p-4 rounded-xl border border-[#8B5E3C]/15">
+                            <span class="text-xs text-[#806B5D]" id="productCount">Hiển thị 8 sản phẩm</span>
                             <div class="flex items-center gap-3">
-                                <span class="text-xs text-gray-400 shrink-0">Sắp xếp theo:</span>
-                                <select id="sortSelect" onchange="filterProducts()" class="bg-black/50 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-brand-gold">
+                                <span class="text-xs text-[#806B5D] shrink-0">Sắp xếp theo:</span>
+                                <select id="sortSelect" onchange="filterProducts()" class="bg-[#3B2A22]/30 border border-[#8B5E3C]/15 rounded-lg px-3 py-1.5 text-xs text-[#3B2A22] focus:outline-none focus:border-brand-gold">
                                     <option value="featured">Nổi bật nhất</option>
                                     <option value="low-high">Giá: Thấp đến Cao</option>
                                     <option value="high-low">Giá: Cao đến Thấp</option>
@@ -618,11 +626,11 @@
         <!-- 5. TRANG LIÊN HỆ (#contact) -->
         <section id="view-contact" class="page-view">
             <!-- Header -->
-            <div class="bg-brand-card py-12 border-b border-white/10">
+            <div class="bg-brand-card py-12 border-b border-[#8B5E3C]/15">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <span class="text-brand-gold text-xs uppercase tracking-[0.3em] font-semibold">Get In Touch</span>
-                    <h1 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">Liên Hệ Wearu Studio</h1>
-                    <p class="text-gray-400 text-xs sm:text-sm mt-2">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ mọi thắc mắc của bạn.</p>
+                    <h1 class="font-serif text-3xl sm:text-4xl font-bold text-[#3B2A22] mt-1">Liên Hệ Wearu Studio</h1>
+                    <p class="text-[#806B5D] text-xs sm:text-sm mt-2">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ mọi thắc mắc của bạn.</p>
                 </div>
             </div>
 
@@ -631,39 +639,39 @@
                     
                     <!-- Contact Info & Map (5 cols) -->
                     <div class="lg:col-span-5 space-y-8">
-                        <div class="bg-brand-card p-6 rounded-2xl border border-white/10 space-y-6">
-                            <h3 class="font-serif text-xl font-bold text-white border-b border-white/10 pb-3">Thông Tin Showroom</h3>
-                            <div class="flex items-start gap-4 text-sm text-gray-300">
+                        <div class="bg-brand-card p-6 rounded-2xl border border-[#8B5E3C]/15 space-y-6">
+                            <h3 class="font-serif text-xl font-bold text-[#3B2A22] border-b border-[#8B5E3C]/15 pb-3">Thông Tin Showroom</h3>
+                            <div class="flex items-start gap-4 text-sm text-[#6F5A4C]">
                                 <div class="w-10 h-10 bg-brand-gold/10 text-brand-gold rounded-xl flex items-center justify-center shrink-0">
                                     <i class="fa-solid fa-location-dot"></i>
                                 </div>
                                 <div>
-                                    <span class="font-bold text-white block">Địa chỉ Studio:</span>
-                                    <span>284 Lý Tự Trọng, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh</span>
+                                    <span class="font-bold text-[#3B2A22] block">Địa chỉ Studio:</span>
+                                    <span>Đường số 24, Phường 11, Quận 6, TP. Hồ Chí Minh</span>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-4 text-sm text-gray-300">
+                            <div class="flex items-start gap-4 text-sm text-[#6F5A4C]">
                                 <div class="w-10 h-10 bg-brand-gold/10 text-brand-gold rounded-xl flex items-center justify-center shrink-0">
                                     <i class="fa-solid fa-phone"></i>
                                 </div>
                                 <div>
-                                    <span class="font-bold text-white block">Hotline tư vấn:</span>
-                                    <span>1900 8888 / 090 123 4567</span>
+                                    <span class="font-bold text-[#3B2A22] block">Hotline tư vấn:</span>
+                                    <span>0908048037</span>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-4 text-sm text-gray-300">
+                            <div class="flex items-start gap-4 text-sm text-[#6F5A4C]">
                                 <div class="w-10 h-10 bg-brand-gold/10 text-brand-gold rounded-xl flex items-center justify-center shrink-0">
                                     <i class="fa-solid fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <span class="font-bold text-white block">Email hỗ trợ:</span>
-                                    <span>support@wearu.studio</span>
+                                    <span class="font-bold text-[#3B2A22] block">Email hỗ trợ:</span>
+                                    <span>wearu.studio@gmail.com</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Google Map Embed -->
-                        <div class="rounded-2xl overflow-hidden border border-white/10 h-64">
+                        <div class="rounded-2xl overflow-hidden border border-[#8B5E3C]/15 h-64">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.460232420993!2d106.69532831533413!3d10.77601999232187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3af50a0001%3A0x6b2b719488a03270!2zTMO9IFThu7EgbHLhuqluZywgQuG6v24gVGjDoG5oLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2s!4v1680000000000!5m2!1svi!2s" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
@@ -671,63 +679,63 @@
                     <!-- Contact Form & FAQ (7 cols) -->
                     <div class="lg:col-span-7 space-y-12">
                         <!-- Message Form -->
-                        <div class="bg-brand-card p-8 rounded-2xl border border-white/10">
-                            <h3 class="font-serif text-2xl font-bold text-white mb-6">Gửi Tin Nhắn Cho Chúng Tôi</h3>
+                        <div class="bg-brand-card p-8 rounded-2xl border border-[#8B5E3C]/15">
+                            <h3 class="font-serif text-2xl font-bold text-[#3B2A22] mb-6">Gửi Tin Nhắn Cho Chúng Tôi</h3>
                             <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label class="text-xs text-gray-400 block mb-1">Họ và Tên *</label>
-                                        <input type="text" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="Nguyễn Văn A">
+                                        <label class="text-xs text-[#806B5D] block mb-1">Họ và Tên *</label>
+                                        <input type="text" required class="w-full bg-[#3B2A22]/8 border border-[#8B5E3C]/15 rounded-xl px-4 py-2.5 text-sm text-[#3B2A22] focus:outline-none focus:border-brand-gold" placeholder="Nguyễn Văn A">
                                     </div>
                                     <div>
-                                        <label class="text-xs text-gray-400 block mb-1">Số Điện Thoại *</label>
-                                        <input type="tel" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="0901234567">
+                                        <label class="text-xs text-[#806B5D] block mb-1">Số Điện Thoại *</label>
+                                        <input type="tel" required class="w-full bg-[#3B2A22]/8 border border-[#8B5E3C]/15 rounded-xl px-4 py-2.5 text-sm text-[#3B2A22] focus:outline-none focus:border-brand-gold" placeholder="0901234567">
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="text-xs text-gray-400 block mb-1">Email</label>
-                                    <input type="email" class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="email@example.com">
+                                    <label class="text-xs text-[#806B5D] block mb-1">Email</label>
+                                    <input type="email" class="w-full bg-[#3B2A22]/8 border border-[#8B5E3C]/15 rounded-xl px-4 py-2.5 text-sm text-[#3B2A22] focus:outline-none focus:border-brand-gold" placeholder="email@example.com">
                                 </div>
                                 <div>
-                                    <label class="text-xs text-gray-400 block mb-1">Nội dung tin nhắn *</label>
-                                    <textarea rows="4" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="Bạn cần tư vấn về thiết kế hay đơn hàng?"></textarea>
+                                    <label class="text-xs text-[#806B5D] block mb-1">Nội dung tin nhắn *</label>
+                                    <textarea rows="4" required class="w-full bg-[#3B2A22]/8 border border-[#8B5E3C]/15 rounded-xl px-4 py-2.5 text-sm text-[#3B2A22] focus:outline-none focus:border-brand-gold" placeholder="Bạn cần tư vấn về thiết kế hay đơn hàng?"></textarea>
                                 </div>
-                                <button type="submit" class="w-full py-3.5 bg-brand-gold text-black font-bold uppercase tracking-wider text-sm rounded-xl hover:bg-yellow-500 transition-colors">
+                                <button type="submit" class="w-full py-3.5 bg-brand-gold text-black font-bold uppercase tracking-wider text-sm rounded-xl hover:bg-[#6B3F2A] transition-colors">
                                     Gửi Yêu Cầu Hỗ Trợ
                                 </button>
                             </form>
                         </div>
 
                         <!-- FAQ Accordion -->
-                        <div class="bg-brand-card p-8 rounded-2xl border border-white/10">
-                            <h3 class="font-serif text-xl font-bold text-white mb-6">Câu Hỏi Thường Gặp (FAQ)</h3>
+                        <div class="bg-brand-card p-8 rounded-2xl border border-[#8B5E3C]/15">
+                            <h3 class="font-serif text-xl font-bold text-[#3B2A22] mb-6">Câu Hỏi Thường Gặp (FAQ)</h3>
                             <div class="space-y-4">
-                                <details class="group bg-black/30 rounded-xl border border-white/5 p-4 [&_summary::-webkit-details-marker]:hidden">
-                                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-white">
+                                <details class="group bg-[#3B2A22]/6 rounded-xl border border-[#8B5E3C]/10 p-4 [&_summary::-webkit-details-marker]:hidden">
+                                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-[#3B2A22]">
                                         <span>Áo tự thiết kế mất bao lâu để sản xuất và giao?</span>
                                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-gold"></i></span>
                                     </summary>
-                                    <p class="mt-3 text-xs text-gray-400 leading-relaxed">
+                                    <p class="mt-3 text-xs text-[#806B5D] leading-relaxed">
                                         Wearu xử lý và in ấn trong vòng 24-48 giờ. Thời gian vận chuyển toàn quốc từ 2 - 4 ngày làm việc.
                                     </p>
                                 </details>
 
-                                <details class="group bg-black/30 rounded-xl border border-white/5 p-4 [&_summary::-webkit-details-marker]:hidden">
-                                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-white">
+                                <details class="group bg-[#3B2A22]/6 rounded-xl border border-[#8B5E3C]/10 p-4 [&_summary::-webkit-details-marker]:hidden">
+                                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-[#3B2A22]">
                                         <span>Chất lượng hình in custom có dễ bong tróc không?</span>
                                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-gold"></i></span>
                                     </summary>
-                                    <p class="mt-3 text-xs text-gray-400 leading-relaxed">
+                                    <p class="mt-3 text-xs text-[#806B5D] leading-relaxed">
                                         Wearu ứng dụng công nghệ in kỹ thuật số DTG thấm trực tiếp vào sợi vải, đảm bảo giữ màu sắc nét và bền bỉ qua hơn 100 lần giặt máy.
                                     </p>
                                 </details>
 
-                                <details class="group bg-black/30 rounded-xl border border-white/5 p-4 [&_summary::-webkit-details-marker]:hidden">
-                                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-white">
+                                <details class="group bg-[#3B2A22]/6 rounded-xl border border-[#8B5E3C]/10 p-4 [&_summary::-webkit-details-marker]:hidden">
+                                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-[#3B2A22]">
                                         <span>Chính sách đổi trả sản phẩm thế nào?</span>
                                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-gold"></i></span>
                                     </summary>
-                                    <p class="mt-3 text-xs text-gray-400 leading-relaxed">
+                                    <p class="mt-3 text-xs text-[#806B5D] leading-relaxed">
                                         Chúng tôi cam kết 1 đổi 1 miễn phí nếu sản phẩm có lỗi từ nhà sản xuất, nhầm size hoặc hình in không đúng thiết kế duyệt của bạn.
                                     </p>
                                 </details>
@@ -742,16 +750,16 @@
     </main>
 
     <!-- SHOPPING CART SLIDER / DRAWER -->
-    <div id="cartDrawerBackdrop" onclick="closeCartDrawer()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
-    <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-[420px] bg-brand-card border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between shadow-2xl">
+    <div id="cartDrawerBackdrop" onclick="closeCartDrawer()" class="fixed inset-0 bg-[#3B2A22]/45 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-[420px] bg-brand-card border-l border-[#8B5E3C]/15 z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between shadow-2xl">
         
         <!-- Cart Header -->
-        <div class="p-5 border-b border-white/10 flex items-center justify-between">
+        <div class="p-5 border-b border-[#8B5E3C]/15 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <i class="fa-solid fa-bag-shopping text-brand-gold"></i>
-                <h3 class="font-bold text-white text-base uppercase tracking-wider">Giỏ Hàng Của Bạn</h3>
+                <h3 class="font-bold text-[#3B2A22] text-base uppercase tracking-wider">Giỏ Hàng Của Bạn</h3>
             </div>
-            <button onclick="closeCartDrawer()" class="text-gray-400 hover:text-white p-2">
+            <button onclick="closeCartDrawer()" class="text-[#806B5D] hover:text-[#3B2A22] p-2">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
         </div>
@@ -762,81 +770,81 @@
         </div>
 
         <!-- Cart Footer -->
-        <div class="p-5 border-t border-white/10 bg-black/40 space-y-4">
+        <div class="p-5 border-t border-[#8B5E3C]/15 bg-[#3B2A22]/8 space-y-4">
             <div class="space-y-1 text-sm">
-                <div class="flex justify-between text-gray-400">
+                <div class="flex justify-between text-[#806B5D]">
                     <span>Tạm tính:</span>
-                    <span id="cartSubtotal" class="text-white font-semibold">0đ</span>
+                    <span id="cartSubtotal" class="text-[#3B2A22] font-semibold">0đ</span>
                 </div>
-                <div class="flex justify-between text-gray-400">
+                <div class="flex justify-between text-[#806B5D]">
                     <span>Phí giao hàng:</span>
                     <span class="text-brand-gold">Miễn phí</span>
                 </div>
-                <div class="flex justify-between text-base font-bold text-white pt-2 border-t border-white/10">
+                <div class="flex justify-between text-base font-bold text-[#3B2A22] pt-2 border-t border-[#8B5E3C]/15">
                     <span>Tổng tiền:</span>
                     <span id="cartTotal" class="text-brand-gold text-xl">0đ</span>
                 </div>
             </div>
-            <button onclick="openCheckoutModal()" class="w-full py-4 bg-gradient-to-r from-brand-gold to-yellow-600 text-black font-bold text-sm uppercase tracking-wider rounded-xl shadow-lg hover:shadow-brand-gold/20 transition-all">
+            <button onclick="openCheckoutModal()" class="w-full py-4 bg-gradient-to-r from-brand-gold to-[#6B3F2A] text-black font-bold text-sm uppercase tracking-wider rounded-xl shadow-lg hover:shadow-brand-gold/20 transition-all">
                 Tiến Hành Thanh Toán
             </button>
         </div>
     </div>
 
     <!-- PRODUCT QUICK VIEW MODAL -->
-    <div id="productModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="bg-brand-card border border-white/10 rounded-2xl max-w-3xl w-full p-6 relative overflow-hidden text-left" id="productModalContent">
+    <div id="productModal" class="fixed inset-0 bg-[#3B2A22]/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-brand-card border border-[#8B5E3C]/15 rounded-2xl max-w-3xl w-full p-6 relative overflow-hidden text-left" id="productModalContent">
             <!-- Populated dynamically -->
         </div>
     </div>
 
     <!-- CHECKOUT FORM MODAL -->
-    <div id="checkoutModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="bg-brand-card border border-white/10 rounded-2xl max-w-xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+    <div id="checkoutModal" class="fixed inset-0 bg-[#3B2A22]/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-brand-card border border-[#8B5E3C]/15 rounded-2xl max-w-xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-[#806B5D] hover:text-[#3B2A22]">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
-            <h3 class="font-serif text-2xl font-bold text-white mb-2">Thanh Toán Đơn Hàng</h3>
-            <p class="text-xs text-gray-400 mb-6">Vui lòng điền thông tin giao hàng bên dưới để hoàn tất.</p>
+            <h3 class="font-serif text-2xl font-bold text-[#3B2A22] mb-2">Thanh Toán Đơn Hàng</h3>
+            <p class="text-xs text-[#806B5D] mb-6">Vui lòng điền thông tin giao hàng bên dưới để hoàn tất.</p>
             
             <form id="checkoutForm" onsubmit="processCheckout(event)" class="space-y-4 text-left">
                 <div>
-                    <label class="text-xs text-gray-400 block mb-1">Họ và tên người nhận *</label>
-                    <input type="text" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="Nguyễn Văn A">
+                    <label class="text-xs text-[#806B5D] block mb-1">Họ và tên người nhận *</label>
+                    <input type="text" required class="w-full bg-[#3B2A22]/8 border border-[#8B5E3C]/15 rounded-xl px-4 py-2.5 text-sm text-[#3B2A22] focus:outline-none focus:border-brand-gold" placeholder="Nguyễn Văn A">
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="text-xs text-gray-400 block mb-1">Số điện thoại *</label>
-                        <input type="tel" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="0901234567">
+                        <label class="text-xs text-[#806B5D] block mb-1">Số điện thoại *</label>
+                        <input type="tel" required class="w-full bg-[#3B2A22]/8 border border-[#8B5E3C]/15 rounded-xl px-4 py-2.5 text-sm text-[#3B2A22] focus:outline-none focus:border-brand-gold" placeholder="0901234567">
                     </div>
                     <div>
-                        <label class="text-xs text-gray-400 block mb-1">Email xác nhận</label>
-                        <input type="email" class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="email@gmail.com">
+                        <label class="text-xs text-[#806B5D] block mb-1">Email xác nhận</label>
+                        <input type="email" class="w-full bg-[#3B2A22]/8 border border-[#8B5E3C]/15 rounded-xl px-4 py-2.5 text-sm text-[#3B2A22] focus:outline-none focus:border-brand-gold" placeholder="email@gmail.com">
                     </div>
                 </div>
                 <div>
-                    <label class="text-xs text-gray-400 block mb-1">Địa chỉ nhận hàng *</label>
-                    <input type="text" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold" placeholder="Số nhà, tên đường, Phường/Xã, Quận/Huyện, Tỉnh/TP">
+                    <label class="text-xs text-[#806B5D] block mb-1">Địa chỉ nhận hàng *</label>
+                    <input type="text" required class="w-full bg-[#3B2A22]/8 border border-[#8B5E3C]/15 rounded-xl px-4 py-2.5 text-sm text-[#3B2A22] focus:outline-none focus:border-brand-gold" placeholder="Số nhà, tên đường, Phường/Xã, Quận/Huyện, Tỉnh/TP">
                 </div>
                 <div>
-                    <label class="text-xs text-gray-400 block mb-1">Phương thức thanh toán</label>
+                    <label class="text-xs text-[#806B5D] block mb-1">Phương thức thanh toán</label>
                     <div class="grid grid-cols-2 gap-3 mt-1">
-                        <label class="border border-brand-gold/50 bg-brand-gold/10 p-3 rounded-xl flex items-center gap-2 cursor-pointer text-xs text-white">
+                        <label class="border border-brand-gold/50 bg-brand-gold/10 p-3 rounded-xl flex items-center gap-2 cursor-pointer text-xs text-[#3B2A22]">
                             <input type="radio" name="payment" checked class="accent-brand-gold">
                             <span>COD (Thanh toán khi nhận)</span>
                         </label>
-                        <label class="border border-white/10 bg-black/20 p-3 rounded-xl flex items-center gap-2 cursor-pointer text-xs text-gray-300">
+                        <label class="border border-[#8B5E3C]/15 bg-[#3B2A22]/5 p-3 rounded-xl flex items-center gap-2 cursor-pointer text-xs text-[#6F5A4C]">
                             <input type="radio" name="payment" class="accent-brand-gold">
                             <span>Chuyển khoản QR Bank</span>
                         </label>
                     </div>
                 </div>
-                <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                <div class="pt-4 border-t border-[#8B5E3C]/15 flex justify-between items-center">
                     <div>
-                        <span class="text-xs text-gray-400 block">Tổng thanh toán:</span>
+                        <span class="text-xs text-[#806B5D] block">Tổng thanh toán:</span>
                         <span id="checkoutTotal" class="text-xl font-bold text-brand-gold">0đ</span>
                     </div>
-                    <button type="submit" class="px-8 py-3.5 bg-brand-gold text-black font-bold uppercase tracking-wider text-xs rounded-xl hover:bg-yellow-500 transition-colors">
+                    <button type="submit" class="px-8 py-3.5 bg-brand-gold text-black font-bold uppercase tracking-wider text-xs rounded-xl hover:bg-[#6B3F2A] transition-colors">
                         Xác Nhận Đặt Hàng
                     </button>
                 </div>
@@ -845,21 +853,18 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-black border-t border-white/10 pt-16 pb-12">
+    <footer class="bg-[#3B2A22] border-t border-[#8B5E3C]/15 pt-16 pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
                 <!-- Col 1: Brand -->
                 <div class="space-y-4">
-                    <a href="#home" class="flex items-center gap-2">
-                        <div class="w-8 h-8 rounded-full border border-brand-gold flex items-center justify-center bg-black">
-                            <span class="font-serif font-bold text-base text-brand-gold">W</span>
-                        </div>
-                        <span class="font-serif font-bold text-xl tracking-widest text-white">WEARU<span class="text-brand-gold">.</span></span>
+                    <a href="#home" class="flex items-center" aria-label="Wearu Studio">
+                        <img src="wearu-logo.png" alt="WEARU T-SHIRT & DESIGN" class="w-[180px] h-auto object-contain">
                     </a>
-                    <p class="text-xs text-gray-400 leading-relaxed">
+                    <p class="text-xs text-[#806B5D] leading-relaxed">
                         Thương hiệu thời trang cao cấp kết hợp công nghệ tự thiết kế cá nhân hóa hàng đầu tại Việt Nam.
                     </p>
-                    <div class="flex space-x-4 text-gray-400 text-lg">
+                    <div class="flex space-x-4 text-[#806B5D] text-lg">
                         <a href="#" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-facebook"></i></a>
                         <a href="#" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-tiktok"></i></a>
@@ -868,8 +873,8 @@
 
                 <!-- Col 2: Navigation -->
                 <div>
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Khám Phá</h4>
-                    <ul class="space-y-2.5 text-xs text-gray-400">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-[#3B2A22] mb-4">Khám Phá</h4>
+                    <ul class="space-y-2.5 text-xs text-[#806B5D]">
                         <li><a href="#about" class="hover:text-brand-gold transition-colors">Về Thương Hiệu</a></li>
                         <li><a href="#customizer" class="hover:text-brand-gold transition-colors">Tự Thiết Kế Áo 3D</a></li>
                         <li><a href="#collection" class="hover:text-brand-gold transition-colors">Bộ Sưu Tập Áo</a></li>
@@ -879,8 +884,8 @@
 
                 <!-- Col 3: Support -->
                 <div>
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Chính Sách</h4>
-                    <ul class="space-y-2.5 text-xs text-gray-400">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-[#3B2A22] mb-4">Chính Sách</h4>
+                    <ul class="space-y-2.5 text-xs text-[#806B5D]">
                         <li><a href="#" class="hover:text-brand-gold transition-colors">Hướng dẫn chọn Size áo</a></li>
                         <li><a href="#" class="hover:text-brand-gold transition-colors">Chính sách vận chuyển</a></li>
                         <li><a href="#" class="hover:text-brand-gold transition-colors">Chính sách đổi trả 15 ngày</a></li>
@@ -890,18 +895,18 @@
 
                 <!-- Col 4: Newsletter -->
                 <div>
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Đăng Ký Nhận Tin</h4>
-                    <p class="text-xs text-gray-400 mb-3">Nhận ngay ưu đãi 10% cho đơn hàng thiết kế đầu tiên.</p>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-[#3B2A22] mb-4">Đăng Ký Nhận Tin</h4>
+                    <p class="text-xs text-[#806B5D] mb-3">Nhận ngay ưu đãi 10% cho đơn hàng thiết kế đầu tiên.</p>
                     <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký!');" class="space-y-2">
-                        <input type="email" required placeholder="Nhập email của bạn..." class="w-full bg-brand-card border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-gold">
-                        <button type="submit" class="w-full py-2 bg-brand-gold text-black font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-yellow-500 transition-colors">
+                        <input type="email" required placeholder="Nhập email của bạn..." class="w-full bg-brand-card border border-[#8B5E3C]/15 rounded-xl px-3 py-2 text-xs text-[#3B2A22] focus:outline-none focus:border-brand-gold">
+                        <button type="submit" class="w-full py-2 bg-brand-gold text-black font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-[#6B3F2A] transition-colors">
                             Đăng Ký
                         </button>
                     </form>
                 </div>
             </div>
 
-            <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+            <div class="border-t border-[#8B5E3C]/15 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-[#927C6D] gap-4">
                 <p>© 2026 Wearu.studio. All rights reserved.</p>
                 <div class="flex gap-4">
                     <span>Designed with Luxury Minimalist Standard</span>
@@ -916,12 +921,12 @@
         const productsData = [
             {
                 id: 'p1',
-                name: 'Áo Phông Oversized Minimalist Gold',
+                name: 'Áo Tay Dài Stay True Longsleeve',
                 category: 'tshirt',
                 price: 320000,
                 rating: 5.0,
-                image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80',
-                desc: 'Phông Cotton 280GSM dày dặn, form Oversized hiện đại chuẩn Studio. Logo thêu kim tuyến tinh tế.'
+                image: 'áo tay dài.png',
+                desc: 'Áo thun tay dài Cotton 280GSM màu đen cao cấp, họa tiết trăng khuyết thêu ngực & chữ STAY TRUE tay áo.'
             },
             {
                 id: 'p2',
@@ -1008,7 +1013,7 @@
                 if (route === hash) {
                     link.className = 'nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-brand-gold border-b-2 border-brand-gold';
                 } else {
-                    link.className = 'nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-gray-300 hover:text-brand-gold';
+                    link.className = 'nav-link px-3 py-2 text-sm font-semibold tracking-wider transition-colors duration-200 uppercase relative text-[#6F5A4C] hover:text-brand-gold';
                 }
             });
 
@@ -1051,12 +1056,12 @@
 
             if (view === 'front') {
                 frontBtn.className = 'px-4 py-1.5 text-xs font-semibold rounded-lg bg-brand-gold text-black transition-all';
-                backBtn.className = 'px-4 py-1.5 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all';
+                backBtn.className = 'px-4 py-1.5 text-xs font-semibold rounded-lg text-[#6F5A4C] hover:text-[#3B2A22] transition-all';
                 frontText.classList.remove('hidden');
                 backText.classList.add('hidden');
             } else {
                 backBtn.className = 'px-4 py-1.5 text-xs font-semibold rounded-lg bg-brand-gold text-black transition-all';
-                frontBtn.className = 'px-4 py-1.5 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all';
+                frontBtn.className = 'px-4 py-1.5 text-xs font-semibold rounded-lg text-[#6F5A4C] hover:text-[#3B2A22] transition-all';
                 backText.classList.remove('hidden');
                 frontText.classList.add('hidden');
             }
@@ -1098,7 +1103,7 @@
                 if (btn.innerText === size) {
                     btn.className = 'size-btn py-2 text-xs font-bold border border-brand-gold bg-brand-gold/10 text-brand-gold rounded-xl';
                 } else {
-                    btn.className = 'size-btn py-2 text-xs font-bold border border-white/20 rounded-xl text-gray-300 hover:border-brand-gold';
+                    btn.className = 'size-btn py-2 text-xs font-bold border border-[#8B5E3C]/25 rounded-xl text-[#6F5A4C] hover:border-brand-gold';
                 }
             });
         }
@@ -1116,7 +1121,7 @@
                 name: `Áo Tự Thiết Kế (${customizerState.size})`,
                 price: 390000,
                 size: customizerState.size,
-                image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=400&q=80',
+                image: 'áo tay dài.png',
                 isCustom: true,
                 details: customizerState.text ? `Chữ: "${customizerState.text}"` : 'Mẫu thiết kế riêng',
                 quantity: 1
@@ -1136,10 +1141,10 @@
 
             const bests = productsData.slice(0, 4);
             container.innerHTML = bests.map(p => `
-                <div class="bg-brand-card border border-white/10 rounded-2xl overflow-hidden group hover:border-brand-gold/50 transition-all duration-300 flex flex-col justify-between">
-                    <div class="relative overflow-hidden h-64 bg-black/40">
+                <div class="bg-brand-card border border-[#8B5E3C]/15 rounded-2xl overflow-hidden group hover:border-brand-gold/50 transition-all duration-300 flex flex-col justify-between">
+                    <div class="relative overflow-hidden h-64 bg-[#3B2A22]/8">
                         <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <button onclick="openProductModal('${p.id}')" class="absolute bottom-3 right-3 p-3 bg-black/80 hover:bg-brand-gold hover:text-black text-white rounded-xl backdrop-blur-md transition-colors text-xs font-bold">
+                        <button onclick="openProductModal('${p.id}')" class="absolute bottom-3 right-3 p-3 bg-[#3B2A22]/50 hover:bg-brand-gold hover:text-black text-[#3B2A22] rounded-xl backdrop-blur-md transition-colors text-xs font-bold">
                             Xem Nhanh
                         </button>
                     </div>
@@ -1149,11 +1154,11 @@
                                 <span class="text-[10px] uppercase font-bold text-brand-gold tracking-widest">${p.category}</span>
                                 <span class="text-xs text-yellow-400 font-semibold"><i class="fa-solid fa-star text-[10px]"></i> ${p.rating}</span>
                             </div>
-                            <h3 class="font-bold text-white text-base line-clamp-1 mb-2">${p.name}</h3>
+                            <h3 class="font-bold text-[#3B2A22] text-base line-clamp-1 mb-2">${p.name}</h3>
                         </div>
-                        <div class="flex justify-between items-center pt-3 border-t border-white/5">
+                        <div class="flex justify-between items-center pt-3 border-t border-[#8B5E3C]/10">
                             <span class="text-brand-gold font-bold text-lg">${formatVND(p.price)}</span>
-                            <button onclick="quickAddToCart('${p.id}')" class="p-2.5 bg-white/10 hover:bg-brand-gold hover:text-black text-white rounded-xl transition-colors">
+                            <button onclick="quickAddToCart('${p.id}')" class="p-2.5 bg-white/10 hover:bg-brand-gold hover:text-black text-[#3B2A22] rounded-xl transition-colors">
                                 <i class="fa-solid fa-cart-plus"></i>
                             </button>
                         </div>
@@ -1186,15 +1191,15 @@
 
             if (grid) {
                 if (filtered.length === 0) {
-                    grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-400">Không tìm thấy sản phẩm nào phù hợp với bộ lọc.</div>`;
+                    grid.innerHTML = `<div class="col-span-full text-center py-12 text-[#806B5D]">Không tìm thấy sản phẩm nào phù hợp với bộ lọc.</div>`;
                     return;
                 }
 
                 grid.innerHTML = filtered.map(p => `
-                    <div class="bg-brand-card border border-white/10 rounded-2xl overflow-hidden group hover:border-brand-gold/50 transition-all duration-300 flex flex-col justify-between">
-                        <div class="relative overflow-hidden h-72 bg-black/40">
+                    <div class="bg-brand-card border border-[#8B5E3C]/15 rounded-2xl overflow-hidden group hover:border-brand-gold/50 transition-all duration-300 flex flex-col justify-between">
+                        <div class="relative overflow-hidden h-72 bg-[#3B2A22]/8">
                             <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <button onclick="openProductModal('${p.id}')" class="absolute bottom-3 right-3 p-3 bg-black/80 hover:bg-brand-gold hover:text-black text-white rounded-xl backdrop-blur-md transition-colors text-xs font-bold">
+                            <button onclick="openProductModal('${p.id}')" class="absolute bottom-3 right-3 p-3 bg-[#3B2A22]/50 hover:bg-brand-gold hover:text-black text-[#3B2A22] rounded-xl backdrop-blur-md transition-colors text-xs font-bold">
                                 Xem Nhanh
                             </button>
                         </div>
@@ -1204,12 +1209,12 @@
                                     <span class="text-[10px] uppercase font-bold text-brand-gold tracking-widest">${p.category}</span>
                                     <span class="text-xs text-yellow-400 font-semibold"><i class="fa-solid fa-star text-[10px]"></i> ${p.rating}</span>
                                 </div>
-                                <h3 class="font-bold text-white text-base line-clamp-1 mb-2">${p.name}</h3>
-                                <p class="text-xs text-gray-400 line-clamp-2 mb-4 font-light">${p.desc}</p>
+                                <h3 class="font-bold text-[#3B2A22] text-base line-clamp-1 mb-2">${p.name}</h3>
+                                <p class="text-xs text-[#806B5D] line-clamp-2 mb-4 font-light">${p.desc}</p>
                             </div>
-                            <div class="flex justify-between items-center pt-3 border-t border-white/5">
+                            <div class="flex justify-between items-center pt-3 border-t border-[#8B5E3C]/10">
                                 <span class="text-brand-gold font-bold text-lg">${formatVND(p.price)}</span>
-                                <button onclick="quickAddToCart('${p.id}')" class="px-4 py-2 bg-brand-gold text-black font-bold rounded-xl text-xs hover:bg-yellow-500 transition-colors flex items-center gap-1.5">
+                                <button onclick="quickAddToCart('${p.id}')" class="px-4 py-2 bg-brand-gold text-black font-bold rounded-xl text-xs hover:bg-[#6B3F2A] transition-colors flex items-center gap-1.5">
                                     <i class="fa-solid fa-cart-plus"></i> Thêm
                                 </button>
                             </div>
@@ -1284,7 +1289,7 @@
             if (list) {
                 if (cart.length === 0) {
                     list.innerHTML = `
-                        <div class="text-center py-12 text-gray-500">
+                        <div class="text-center py-12 text-[#927C6D]">
                             <i class="fa-solid fa-bag-shopping text-4xl mb-3 text-gray-600 block"></i>
                             Giỏ hàng của bạn đang trống
                         </div>
@@ -1293,22 +1298,22 @@
                 }
 
                 list.innerHTML = cart.map(item => `
-                    <div class="flex gap-4 p-3 bg-black/40 border border-white/5 rounded-xl items-center">
-                        <img src="${item.image}" class="w-16 h-16 object-cover rounded-lg border border-white/10 shrink-0">
+                    <div class="flex gap-4 p-3 bg-[#3B2A22]/8 border border-[#8B5E3C]/10 rounded-xl items-center">
+                        <img src="${item.image}" class="w-16 h-16 object-cover rounded-lg border border-[#8B5E3C]/15 shrink-0">
                         <div class="flex-grow">
-                            <h4 class="text-xs font-bold text-white line-clamp-1">${item.name}</h4>
-                            <div class="text-[10px] text-gray-400 mt-0.5">Size: <span class="text-brand-gold font-bold">${item.size}</span></div>
+                            <h4 class="text-xs font-bold text-[#3B2A22] line-clamp-1">${item.name}</h4>
+                            <div class="text-[10px] text-[#806B5D] mt-0.5">Size: <span class="text-brand-gold font-bold">${item.size}</span></div>
                             ${item.details ? `<div class="text-[10px] text-brand-gold">${item.details}</div>` : ''}
                             <div class="text-xs font-bold text-brand-gold mt-1">${formatVND(item.price)}</div>
                         </div>
                         <div class="flex flex-col items-end gap-2">
-                            <button onclick="removeFromCart('${item.id}')" class="text-gray-500 hover:text-red-400 text-xs">
+                            <button onclick="removeFromCart('${item.id}')" class="text-[#927C6D] hover:text-red-400 text-xs">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
-                            <div class="flex items-center gap-2 bg-brand-card px-2 py-1 rounded-lg border border-white/10 text-xs">
-                                <button onclick="updateQuantity('${item.id}', -1)" class="text-gray-400 hover:text-white">-</button>
-                                <span class="font-bold text-white min-w-[12px] text-center">${item.quantity}</span>
-                                <button onclick="updateQuantity('${item.id}', 1)" class="text-gray-400 hover:text-white">+</button>
+                            <div class="flex items-center gap-2 bg-brand-card px-2 py-1 rounded-lg border border-[#8B5E3C]/15 text-xs">
+                                <button onclick="updateQuantity('${item.id}', -1)" class="text-[#806B5D] hover:text-[#3B2A22]">-</button>
+                                <span class="font-bold text-[#3B2A22] min-w-[12px] text-center">${item.quantity}</span>
+                                <button onclick="updateQuantity('${item.id}', 1)" class="text-[#806B5D] hover:text-[#3B2A22]">+</button>
                             </div>
                         </div>
                     </div>
@@ -1336,23 +1341,23 @@
             const content = document.getElementById('productModalContent');
 
             content.innerHTML = `
-                <button onclick="closeProductModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 z-10">
+                <button onclick="closeProductModal()" class="absolute top-4 right-4 text-[#806B5D] hover:text-[#3B2A22] p-2 z-10">
                     <i class="fa-solid fa-xmark text-xl"></i>
                 </button>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                    <div class="rounded-xl overflow-hidden h-72 bg-black/40">
+                    <div class="rounded-xl overflow-hidden h-72 bg-[#3B2A22]/8">
                         <img src="${p.image}" class="w-full h-full object-cover">
                     </div>
                     <div class="space-y-4">
                         <span class="text-xs uppercase font-bold text-brand-gold tracking-widest">${p.category}</span>
-                        <h2 class="text-2xl font-bold text-white">${p.name}</h2>
+                        <h2 class="text-2xl font-bold text-[#3B2A22]">${p.name}</h2>
                         <div class="text-yellow-400 text-xs flex items-center gap-1 font-semibold">
                             <i class="fa-solid fa-star"></i> ${p.rating} (48 đánh giá)
                         </div>
-                        <p class="text-xs text-gray-300 leading-relaxed font-light">${p.desc}</p>
+                        <p class="text-xs text-[#6F5A4C] leading-relaxed font-light">${p.desc}</p>
                         <div class="text-2xl font-bold text-brand-gold">${formatVND(p.price)}</div>
                         <div class="pt-4 flex gap-3">
-                            <button onclick="quickAddToCart('${p.id}'); closeProductModal();" class="flex-grow py-3 bg-brand-gold text-black font-bold uppercase tracking-wider text-xs rounded-xl hover:bg-yellow-500 transition-colors">
+                            <button onclick="quickAddToCart('${p.id}'); closeProductModal();" class="flex-grow py-3 bg-brand-gold text-black font-bold uppercase tracking-wider text-xs rounded-xl hover:bg-[#6B3F2A] transition-colors">
                                 Thêm Vào Giỏ Hàng
                             </button>
                         </div>
